@@ -129,26 +129,54 @@
       <h3 class="heading__cart">Varukorg</h3>
       <ul class="cart-items" id="cartItems">
         <li class="cart-item" id="cartItem">
-          <img src="" alt="" class="cart-item__image" />
-          <span class="cart-item__title" id="cartItemTitle"></span>
-          <span class="cart-item__price" id="cartItemPrice"
-            >Pris:10&#x20bf;</span
-          >
-          <div class="cart-item__buttons">
-            <button class="cart-item__button" id="cartItemButtonDecrease">
-              -
+          <img src="src/img/tiger.jpg" alt="" class="cart-item__image" />
+          <span class="cart-item__title" id="cartItemTitle">Lejon</span>
+          <div class="cart-item__bottom">
+            <span class="cart-item__price" id="cartItemPrice"
+              >Pris:10&#x20bf;</span
+            >
+            <div class="cart-item__buttons">
+              <button class="cart-item__button" id="cartItemButtonDecrease">
+                -
+              </button>
+              <span class="cart-item__amount" id="cartItemAmount">1</span>
+              <button class="cart-item__button" id="cartItemButton">+</button>
+            </div>
+            <span class="cart-item__price-total" id="cartItemPriceTotal"
+              >0.7645&#x20bf;</span
+            >
+            <button class="cart-item__remove" id="cartItemRemove">
+              Ta bort
             </button>
-            <span class="cart-item__amount" id="cartItemAmount"></span>
-            <button class="cart-item__button" id="cartItemButton">+</button>
           </div>
-          <span class="cart-item__price-total" id="cartItemPriceTotal"></span>
-          <button class="cart-item__remove" id="cartItemRemove">Ta bort</button>
+        </li>
+        <li class="cart-item" id="cartItem">
+          <img src="src/img/lejon.jpg" alt="" class="cart-item__image" />
+          <span class="cart-item__title" id="cartItemTitle">Lejon</span>
+          <div class="cart-item__bottom">
+            <span class="cart-item__price" id="cartItemPrice"
+              >Pris:10&#x20bf;</span
+            >
+            <div class="cart-item__buttons">
+              <button class="cart-item__button" id="cartItemButtonDecrease">
+                -
+              </button>
+              <span class="cart-item__amount" id="cartItemAmount">1</span>
+              <button class="cart-item__button" id="cartItemButton">+</button>
+            </div>
+            <span class="cart-item__price-total" id="cartItemPriceTotal"
+              >0.7645&#x20bf;</span
+            >
+            <button class="cart-item__remove" id="cartItemRemove">
+              Ta bort
+            </button>
+          </div>
         </li>
       </ul>
       <h4 class="cart-total-price" id="cartTotalPrice">Total:</h4>
       <a class="cart-checkout" href="#">Checkout</a>
     </section>
-
+    <section class="main-container"></section>
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
 </html>

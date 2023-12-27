@@ -24,6 +24,7 @@
     justify-content: space-evenly;
     gap: 100px;
     list-style-type: none;
+    text-decoration: none;
   }
   &__logo-image {
   }
@@ -54,5 +55,36 @@
   gap: 20px;
   &__image {
     max-width: 40vw;
+  }
+}
+.cart-container {
+  background-color: rgb(243, 243, 227);
+}
+.cart-items {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-item {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  border: 1px solid red;
+
+  &__image {
+    width: 75px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  &__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  &__bottom {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    gap: 20px;
   }
 }
