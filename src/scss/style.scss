@@ -48,3 +48,11 @@
     width: 150px;
   }
 }
+.product-container {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  &__image {
+    max-width: 40vw;
+  }
+}
