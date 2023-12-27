@@ -7,7 +7,113 @@
     <title>Sell it or buy it?</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <nav class="navbar">
+        <ul class="navbar__ul">
+          <li class="navbar__li"><a class="navbar__link" href="#">Home</a></li>
+          <li class="navbar__li">
+            <a class="navbar__link" href="#">Produkter</a>
+          </li>
+          <li class="navbar__li"><a class="navbar__link" href="#">Kassa</a></li>
+          <li class="navbar__li">
+            <a class="navbar__link" href="#">Om oss</a>
+          </li>
+        </ul>
+        <button id="cartButton">Varukorg</button>
+        <div class="hamburger-menu">
+          <span class="hamburger-menu__bar1"></span>
+          <span class="hamburger-menu__bar2"></span>
+          <span class="hamburger-menu__bar3"></span>
+        </div>
+      </nav>
+    </header>
+    <section class="main-container" id="productsPage">
+      <h2 class="heading__main">Produkter</h2>
+      <div class="products-container" id="productsContainer">
+        <div class="product-card">
+          <img class="product-card__image" src="" alt=":)" />
+          <h3 class="product-card__name">Tiger</h3>
+          <span class="product-card__price">0.7645 btc</span>
+          <button class="product-card__button" type="button">
+            Lägg till i varukorg
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img class="product-card__image" src="" alt=":)" />
+          <h3 class="product-card__name">Lejon</h3>
+          <span class="product-card__price">0.7645 btc</span>
+          <button class="product-card__button" type="button">
+            Lägg till i varukorg
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img class="product-card__image" src="" alt=":)" />
+          <h3 class="product-card__name">Val</h3>
+          <span class="product-card__price">0.7645 btc</span>
+          <button class="product-card__button" type="button">
+            Lägg till i varukorg
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img class="product-card__image" src="" alt=":)" />
+          <h3 class="product-card__name">Apa</h3>
+          <span class="product-card__price">0.7645 btc</span>
+          <button class="product-card__button" type="button">
+            Lägg till i varukorg
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-container" id="productPage">
+      <h2 class="heading__main" id="productName">Tiger</h2>
+      <section class="product-container">
+        <img class="product__image" id="productImage" src="" alt=":)" />
+        <div class="product__info">
+          <p class="product__description" id="productDescription">
+            very cute tiger Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Libero, quam voluptates dolor assumenda fugit, explicabo
+            veniam aut possimus tempore quidem asperiores inventore? Hic aperiam
+            officia saepe soluta iure ea architecto?
+          </p>
+          <span class="product__price" id="productPrice">0.7645 btc</span>
+          <form id="addProductForm" class="product__add-form">
+            <input
+              type="number"
+              id="productFormQuantity"
+              class="product__form-input"
+              value="1"
+            />
+            <button id="productFormButton" class="product__form-button">
+              Lägg till i varukorgen
+            </button>
+          </form>
+        </div>
+      </section>
+    </section>
+    <section class="cart-container" id="cartContainer">
+      <h3 class="heading__cart">Varukorg</h3>
+      <ul class="cart-items" id="cartItems">
+        <li class="cart-item" id="cartItem">
+          <img src="" alt="" class="cart-item__image" />
+          <span class="cart-item__title" id="cartItemTitle"></span>
+          <span class="cart-item__price" id="cartItemPrice">Pris:</span>
+          <div class="cart-item__buttons">
+            <button class="cart-item__button" id="cartItemButtonDecrease">
+              -
+            </button>
+            <span class="cart-item__amount" id="cartItemAmount"></span>
+            <button class="cart-item__button" id="cartItemButton">+</button>
+          </div>
+          <span class="cart-item__price-total" id="cartItemPriceTotal"></span>
+          <button class="cart-item__remove" id="cartItemRemove">Ta bort</button>
+        </li>
+      </ul>
+    </section>
+
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
 </html>
