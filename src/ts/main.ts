@@ -2,12 +2,12 @@ import "./../scss/style.scss";
 import { Product } from "./models/Product";
 import { CartItem } from "./models/CartItem";
 import "./services/cartService";
-
+import { createCartHtml } from "./services/cartService";
 export const p1: Product = new Product(
   1,
   "Tiger",
   5,
-  0.1,
+  2,
   "cute Tiger",
   0,
   "src/img/tiger.jpg",
@@ -17,7 +17,7 @@ export const p2: Product = new Product(
   1,
   "Lejon",
   4,
-  0.2,
+  3,
   "cute Lejon",
   0,
   "src/img/lejon.jpg",
@@ -30,11 +30,4 @@ console.log(products);
 export const cart: CartItem[] = [];
 console.log(cart);
 
-/* public id: number,
-public name: string,
-public age: number,
-public price: number,
-public description: string,
-public quantity: number,
-public image: string,
-public country: string */
+createCartHtml();
