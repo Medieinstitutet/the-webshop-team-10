@@ -1,8 +1,8 @@
 import "./../scss/style.scss";
 import { Product } from "./models/Product";
 import { CartItem } from "./models/CartItem";
-import "./services/cartService";
-import { createCartHtml } from "./services/cartService";
+import "./services/cartServices";
+import { createCartHtml } from "./services/cartServices";
 export const p1: Product = new Product(
   1,
   "Tiger",

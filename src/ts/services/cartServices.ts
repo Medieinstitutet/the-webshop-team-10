@@ -5,7 +5,7 @@ import { p1 } from "../main";
 // import { p2 } from "../main";
 
 // Funktion för att lägga till produkter i cart. Tar emot produkt och antal.
-const addToCart = (product: Product, quantity: number) => {
+export const addToCart = (product: Product, quantity: number) => {
   let alreadyInCart = false;
   //Kontrollerar om produkt med samma id redan finns i cart. Adderar då ny quantity.
   for (let i = 0; i < cart.length; i++) {
