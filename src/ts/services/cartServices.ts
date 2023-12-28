@@ -32,6 +32,7 @@ const cartTotalPrice = document.getElementById("cartTotalPrice");
 export function createCartHtml() {
   //Tömmer listan
   (cartUl as HTMLUListElement).innerHTML = "";
+  //Variabel för att räkna ut totalpris
   let cartTotal = 0;
   //Loopar igenom hela cart och genererar html.
   for (let i = 0; i < cart.length; i++) {
@@ -70,7 +71,9 @@ export function createCartHtml() {
     cartItemButtonDecrease.innerHTML = "-";
     cartItemAmount.innerHTML = cart[i].quantity.toString();
     cartItemButtonIncrease.innerHTML = "+";
+    //Produktens totalpris
     const productTotalPrice: number = cart[i].product.price * cart[i].quantity;
+    //Lägger till produktens totalpris till varukorgens totalpris
     cartTotal += productTotalPrice;
     cartItemPriceTotal.innerHTML =
       "Totalpris: " + productTotalPrice.toString() + "&#x20bf;";
@@ -96,6 +99,7 @@ export function createCartHtml() {
     });
 
     cartItemButtonDecrease.addEventListener("click", () => {
+      //Om det bara finns en av produkten fråga om man vill ta bort
       if (cart[i].quantity === 1) {
         if (confirm("Vill du ta bort produkten från varukorgen?")) {
           cart.splice(i, 1);
@@ -115,6 +119,7 @@ export function createCartHtml() {
       createCartHtml();
     });
   }
+  //Lägger till totalbeloppet för kassan
   if (cartTotalPrice) {
     cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
   }
