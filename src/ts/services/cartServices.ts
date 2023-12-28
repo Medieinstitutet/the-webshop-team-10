@@ -28,6 +28,8 @@ cartButton?.addEventListener("click", () => {
 const cartUl = document.getElementById("cartItems");
 //Fuktion för att skapa html för cart.
 export function createCartHtml() {
+  //Tömmer listan
+  (cartUl as HTMLUListElement).innerHTML = "";
   //Loopar igenom hela cart och genererar html.
   for (let i = 0; i < cart.length; i++) {
     //Skapar element
@@ -82,5 +84,29 @@ export function createCartHtml() {
     cartItemButtonsDiv.appendChild(cartItemButtonIncrease);
     cartItemBottomDiv.appendChild(cartItemPriceTotal);
     cartItemBottomDiv.appendChild(cartItemButtonDelete);
+
+    //Funktionalitet för knappar
+    cartItemButtonIncrease.addEventListener("click", () => {
+      cart[i].quantity++;
+      createCartHtml();
+    });
+
+    cartItemButtonDecrease.addEventListener("click", () => {
+      if (cart[i].quantity === 1) {
+        if (confirm("Vill du ta bort produkten från varukorgen?")) {
+          cart.splice(i, 1);
+        }
+        createCartHtml();
+      }
+      if (cart[i].quantity > 1) cart[i].quantity--;
+      createCartHtml();
+    });
+
+    cartItemButtonDelete.addEventListener("click", () => {
+      if (confirm("Vill du ta bort produkten från varukorgen?")) {
+        cart.splice(i, 1);
+      }
+      createCartHtml();
+    });
   }
 }
