@@ -25,9 +25,31 @@ export const p2: Product = new Product(
 );
 
 export const products: Product[] = [p1, p2];
-console.log(products);
 
 export const cart: CartItem[] = [];
+
+if (localStorage.getItem("Group10Cart")) {
+  const storedCart = JSON.parse(localStorage.getItem("Group10Cart") || "");
+  //cart.push(...storedCart);
+  for (let i = 0; i < storedCart.length; i++) {
+    cart.push(
+      new CartItem(
+        new Product(
+          storedCart[i].product.id,
+          storedCart[i].product.name,
+          storedCart[i].product.age,
+          storedCart[i].product.price,
+          storedCart[i].product.description,
+          storedCart[i].product.stock,
+          storedCart[i].product.image,
+          storedCart[i].product.country
+        ),
+        storedCart[i].quantity
+      )
+    );
+  }
+}
+
 console.log(cart);
 
 createCartHtml();

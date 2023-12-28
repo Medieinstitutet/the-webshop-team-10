@@ -123,4 +123,5 @@ export function createCartHtml() {
   if (cartTotalPrice) {
     cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
   }
+  localStorage.setItem("Group10Cart", JSON.stringify(cart));
 }

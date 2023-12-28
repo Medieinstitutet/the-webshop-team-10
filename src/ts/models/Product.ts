@@ -5,7 +5,7 @@ export class Product {
     public age: number,
     public price: number,
     public description: string,
-    public quantity: number,
+    public stock: number,
     public image: string,
     public country: string
   ) {}
