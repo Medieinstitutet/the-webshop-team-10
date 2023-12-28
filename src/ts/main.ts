@@ -3,34 +3,13 @@ import { Product } from "./models/Product";
 import { CartItem } from "./models/CartItem";
 import "./services/cartServices";
 import { createCartHtml } from "./services/cartServices";
-export const p1: Product = new Product(
-  1,
-  "Tiger",
-  5,
-  2,
-  "cute Tiger",
-  0,
-  "src/img/tiger.jpg",
-  "Indien"
-);
-export const p2: Product = new Product(
-  2,
-  "Lejon",
-  4,
-  3,
-  "cute Lejon",
-  0,
-  "src/img/lejon.jpg",
-  "Kenya"
-);
-
-export const products: Product[] = [p1, p2];
 
 export const cart: CartItem[] = [];
 
+//Kontrollera om det finns något sparat i local storage.
 if (localStorage.getItem("Group10Cart")) {
   const storedCart = JSON.parse(localStorage.getItem("Group10Cart") || "");
-  //cart.push(...storedCart);
+  //Loopar igenom det som är sparat och lägger till i cart.
   for (let i = 0; i < storedCart.length; i++) {
     cart.push(
       new CartItem(

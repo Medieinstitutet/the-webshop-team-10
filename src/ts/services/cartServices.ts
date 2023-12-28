@@ -1,8 +1,8 @@
 import { cart } from "../main";
 import { Product } from "../models/Product";
 import { CartItem } from "../models/CartItem";
-import { p1 } from "../main";
-import { p2 } from "../main";
+import { p1 } from "./productServices";
+import { p2 } from "./productServices";
 
 // Funktion för att lägga till produkter i cart. Tar emot produkt och antal.
 export const addToCart = (product: Product, quantity: number) => {
