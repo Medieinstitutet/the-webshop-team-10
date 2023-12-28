@@ -2,7 +2,7 @@ import { cart } from "../main";
 import { Product } from "../models/Product";
 import { CartItem } from "../models/CartItem";
 import { p1 } from "../main";
-// import { p2 } from "../main";
+import { p2 } from "../main";
 
 // Funktion för att lägga till produkter i cart. Tar emot produkt och antal.
 export const addToCart = (product: Product, quantity: number) => {
@@ -23,13 +23,16 @@ export const addToCart = (product: Product, quantity: number) => {
 const cartButton = document.getElementById("cartButton");
 cartButton?.addEventListener("click", () => {
   addToCart(p1, 1);
+  addToCart(p2, 1);
 });
 
 const cartUl = document.getElementById("cartItems");
+const cartTotalPrice = document.getElementById("cartTotalPrice");
 //Fuktion för att skapa html för cart.
 export function createCartHtml() {
   //Tömmer listan
   (cartUl as HTMLUListElement).innerHTML = "";
+  let cartTotal = 0;
   //Loopar igenom hela cart och genererar html.
   for (let i = 0; i < cart.length; i++) {
     //Skapar element
@@ -67,9 +70,10 @@ export function createCartHtml() {
     cartItemButtonDecrease.innerHTML = "-";
     cartItemAmount.innerHTML = cart[i].quantity.toString();
     cartItemButtonIncrease.innerHTML = "+";
+    const productTotalPrice: number = cart[i].product.price * cart[i].quantity;
+    cartTotal += productTotalPrice;
     cartItemPriceTotal.innerHTML =
-      ("Totalpris: " + cart[i].product.price * cart[i].quantity).toString() +
-      "&#x20bf;";
+      "Totalpris: " + productTotalPrice.toString() + "&#x20bf;";
     cartItemButtonDelete.innerHTML = "Ta bort";
 
     //Placerar elementen
@@ -98,8 +102,10 @@ export function createCartHtml() {
         }
         createCartHtml();
       }
-      if (cart[i].quantity > 1) cart[i].quantity--;
-      createCartHtml();
+      if (cart[i].quantity > 1) {
+        cart[i].quantity--;
+        createCartHtml();
+      }
     });
 
     cartItemButtonDelete.addEventListener("click", () => {
@@ -108,5 +114,8 @@ export function createCartHtml() {
       }
       createCartHtml();
     });
+  }
+  if (cartTotalPrice) {
+    cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
   }
 }

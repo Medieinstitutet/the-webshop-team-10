@@ -14,7 +14,7 @@ export const p1: Product = new Product(
   "Indien"
 );
 export const p2: Product = new Product(
-  1,
+  2,
   "Lejon",
   4,
   3,
