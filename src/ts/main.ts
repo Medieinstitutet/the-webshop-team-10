@@ -1,8 +1,9 @@
 import "./../scss/style.scss";
 import { Product } from "./models/Product";
 import { CartItem } from "./models/CartItem";
+import "./services/cartService";
 
-const p1: Product = new Product(
+export const p1: Product = new Product(
   1,
   "Tiger",
   5,
@@ -12,7 +13,7 @@ const p1: Product = new Product(
   "src/img/tiger.jpg",
   "Indien"
 );
-const p2: Product = new Product(
+export const p2: Product = new Product(
   1,
   "Lejon",
   4,
