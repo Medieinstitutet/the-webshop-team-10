@@ -1,5 +1,6 @@
 import "./../scss/style.scss";
-import { Product } from "./services/Product";
+import { Product } from "./models/Product";
+import { CartItem } from "./models/CartItem";
 
 const p1: Product = new Product(
   1,
@@ -22,8 +23,11 @@ const p2: Product = new Product(
   "Kenya"
 );
 
-const product: Product[] = [p1, p2];
-console.log(product);
+export const products: Product[] = [p1, p2];
+console.log(products);
+
+export const cart: CartItem[] = [];
+console.log(cart);
 
 /* public id: number,
 public name: string,
