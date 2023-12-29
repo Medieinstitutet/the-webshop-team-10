@@ -2,6 +2,8 @@ import "./../scss/style.scss";
 import { Product } from "./models/Product";
 import { CartItem } from "./models/CartItem";
 import "./services/cartServices";
+import "./services/checkoutServices";
+import "./services/navbarServices";
 import { createCartHtml } from "./services/cartServices";
 
 export const cart: CartItem[] = [];
