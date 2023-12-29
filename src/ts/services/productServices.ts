@@ -30,6 +30,7 @@ const createProductsHtml = () => {
   for (let i = 0; i < products.length; i++) {
     //Skapar element
     const productCard = document.createElement("div");
+    const productCardLink = document.createElement("a");
     const productCardImage = document.createElement("img");
     const productCardName = document.createElement("h3");
     const productCardPrice = document.createElement("span");
@@ -37,12 +38,14 @@ const createProductsHtml = () => {
 
     //Tilldelar klasser
     productCard.className = "product-card";
+    productCardLink.className = "product-card__link";
     productCardImage.className = "product-card__image";
     productCardName.className = "product-card__name";
     productCardPrice.className = "product-card__price";
     productCardButton.className = "product-card__button";
 
     //Lägger till produktinformation
+    productCardLink.href = "/?id=" + products[i].id;
     productCardImage.src = products[i].image;
     productCardImage.alt = products[i].name;
     productCardName.innerHTML = products[i].name;
@@ -51,9 +54,10 @@ const createProductsHtml = () => {
 
     //Placerar elementen
     productsContainer?.appendChild(productCard);
-    productCard.appendChild(productCardImage);
-    productCard.appendChild(productCardName);
-    productCard.appendChild(productCardPrice);
+    productCard.appendChild(productCardLink);
+    productCardLink.appendChild(productCardImage);
+    productCardLink.appendChild(productCardName);
+    productCardLink.appendChild(productCardPrice);
     productCard.appendChild(productCardButton);
 
     //Funktionalitet för knapp
