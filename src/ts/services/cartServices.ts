@@ -2,11 +2,29 @@ import { cart } from "../main";
 import { Product } from "../models/Product";
 import { CartItem } from "../models/CartItem";
 
-//Alla variabler som behövs för cart
+//Hitta och skapa variabler som behövs för att konstruera cart
 const cartContainer = document.getElementById("cartContainer");
-const cartUl = document.getElementById("cartItems");
-const cartTotalPrice = document.getElementById("cartTotalPrice");
-const cartEmpty = document.getElementById("cartEmpty");
+
+const cartHeading = document.createElement("h3");
+const cartEmpty = document.createElement("span");
+const cartUl = document.createElement("ul");
+const cartTotalPrice = document.createElement("h4");
+const cartCheckoutLink = document.createElement("a");
+
+cartHeading.className = "cart-contianer__heading";
+cartHeading.innerHTML = "Varukorg";
+cartEmpty.className = "cart-contianer__empty";
+cartUl.className = "cart-items";
+cartTotalPrice.className = "cart-contianer__total-price";
+cartCheckoutLink.className = "cart-contianer__checkout-link";
+cartCheckoutLink.href = "#";
+cartCheckoutLink.innerHTML = "Checkout";
+
+cartContainer?.appendChild(cartHeading);
+cartContainer?.appendChild(cartEmpty);
+cartContainer?.appendChild(cartUl);
+cartContainer?.appendChild(cartTotalPrice);
+cartContainer?.appendChild(cartCheckoutLink);
 
 // Funktion för att lägga till produkter i cart. Tar emot produkt och antal.
 export const addToCart = (product: Product, quantity: number) => {
@@ -32,7 +50,7 @@ export const toggleCart = () => {
 //Fuktion för att skapa html för cart.
 export function createCartHtml() {
   //Tömmer listan
-  (cartUl as HTMLUListElement).innerHTML = "";
+  cartUl.innerHTML = "";
   //Variabel för att räkna ut totalpris
   let cartTotal = 0;
   //Loopar igenom hela cart och genererar html.
@@ -81,7 +99,7 @@ export function createCartHtml() {
     cartItemButtonDelete.innerHTML = "Ta bort";
 
     //Placerar elementen
-    cartUl?.appendChild(cartItemLi);
+    cartUl.appendChild(cartItemLi);
     cartItemLi.appendChild(cartItemImg);
     cartItemLi.appendChild(cartItemTitle);
     cartItemLi.appendChild(cartItemBottomDiv);
@@ -121,9 +139,7 @@ export function createCartHtml() {
     });
   }
   //Lägger till totalbeloppet för kassan
-  if (cartTotalPrice) {
-    cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
-  }
+  cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
 
   //Kontrollerar om varukorgen är tom och skriver ut det
   (cartEmpty as HTMLSpanElement).innerHTML = "";

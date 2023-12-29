@@ -64,7 +64,7 @@ navbarLiAboutUs.appendChild(navbarLinkAboutUs);
 navbarUl.appendChild(navbarLiAboutUs);
 
 // Skapar knapp för varukorg
-export const cartButton = document.createElement("button");
+const cartButton = document.createElement("button");
 cartButton.id = "cartButton";
 cartButton.innerHTML = "Varukorg";
 //Eventlistener som gör att varukorg visas
