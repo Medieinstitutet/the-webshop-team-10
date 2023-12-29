@@ -5,6 +5,10 @@ import "./services/cartServices";
 import "./services/checkoutServices";
 import "./services/navbarServices";
 import { createCartHtml } from "./services/cartServices";
+import {
+  createProductHtml,
+  createProductsHtml,
+} from "./services/productServices";
 
 export const cart: CartItem[] = [];
 
@@ -34,3 +38,5 @@ if (localStorage.getItem("Group10Cart")) {
 console.log(cart);
 
 createCartHtml();
+createProductsHtml();
+createProductHtml();
