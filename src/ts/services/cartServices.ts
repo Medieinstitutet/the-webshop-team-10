@@ -6,6 +6,7 @@ import { CartItem } from "../models/CartItem";
 const cartContainer = document.getElementById("cartContainer");
 const cartUl = document.getElementById("cartItems");
 const cartTotalPrice = document.getElementById("cartTotalPrice");
+const cartEmpty = document.getElementById("cartEmpty");
 
 // Funktion för att lägga till produkter i cart. Tar emot produkt och antal.
 export const addToCart = (product: Product, quantity: number) => {
@@ -123,5 +124,13 @@ export function createCartHtml() {
   if (cartTotalPrice) {
     cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
   }
+
+  //Kontrollerar om varukorgen är tom och skriver ut det
+  (cartEmpty as HTMLSpanElement).innerHTML = "";
+  if (cart.length === 0) {
+    (cartEmpty as HTMLSpanElement).innerHTML = "Varukorgen är tom";
+  }
+
+  //Sparar till LS
   localStorage.setItem("Group10Cart", JSON.stringify(cart));
 }

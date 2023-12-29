@@ -8,13 +8,15 @@
   </head>
   <body>
     <header class="header" id="header"></header>
+
     <section class="cart-container" id="cartContainer">
       <h3 class="heading__cart">Varukorg</h3>
-      <span class="cart-empty">Varukorgen är tom</span>
+      <span class="cart-empty" id="cartEmpty"></span>
       <ul class="cart-items" id="cartItems"></ul>
       <h4 class="cart-total-price" id="cartTotalPrice">Total:</h4>
       <a class="cart-checkout" href="#">Checkout</a>
     </section>
+
     <section class="main-container" id="productsPage">
       <h2 class="heading__main">Produkter</h2>
       <div class="products-container" id="productsContainer"></div>
@@ -56,7 +58,9 @@
         </div>
       </section>
     </section>
+
     <section class="main-container" id="checkoutContainer"></section>
+
     <section class="main-container"></section>
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
