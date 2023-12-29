@@ -26,7 +26,6 @@ export const addToCart = (product: Product, quantity: number) => {
 //Funktion för att göra cart synlig eller inte
 export const toggleCart = () => {
   cartContainer?.classList.toggle("cart-container__visible");
-  cartContainer?.classList.toggle("cart-container__invisible");
 };
 
 //Fuktion för att skapa html för cart.

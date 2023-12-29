@@ -60,6 +60,11 @@
 }
 .cart-container {
   background-color: rgb(243, 243, 227);
+  display: none;
+
+  &__visible {
+    display: block;
+  }
 }
 .cart-items {
   gap: 20px;
