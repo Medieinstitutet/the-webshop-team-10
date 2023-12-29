@@ -77,11 +77,64 @@ if (document.location.search) {
   let params: URLSearchParams = new URLSearchParams(document.location.search);
   let productQueryId: number = parseInt(params.get("id") || "0");
 
+  const productPage = document.getElementById("productPage");
   //Loopar igenom alla produkter
   for (let i = 0; i < products.length; i++) {
     //Om det finns en produkt som har samma id som i queryn så genererar den html för den produkten.
     if (productQueryId === products[i].id) {
-      console.log(productQueryId, products[i]);
+      (productPage as HTMLDivElement).innerHTML = "";
+
+      //Skapar element
+      const productHeading = document.createElement("h2");
+      const productContainer = document.createElement("section");
+      const productContainerImage = document.createElement("img");
+      const productContainerInfo = document.createElement("div");
+      const productContainerHeading = document.createElement("h3");
+      const productContainerDescription = document.createElement("p");
+      const productContainerPrice = document.createElement("span");
+      const productContainerForm = document.createElement("form");
+      const productContainerFormInput = document.createElement("input");
+      const productContainerFormButton = document.createElement("button");
+
+      //Tilldelar klasser
+      productHeading.className = "heading__main";
+      productContainer.className = "product-container";
+      productContainerImage.className = "product-container__image";
+      productContainerInfo.className = "product-container__info";
+      productContainerHeading.className = "product-container__heading";
+      productContainerDescription.className = "product-container__description";
+      productContainerPrice.className = "product-container__price";
+      productContainerForm.className = "product-container__form";
+      productContainerFormInput.className = "product-container__form-input";
+      productContainerFormButton.className = "product-container__form-button";
+
+      //Lägger till produktinformation
+      productHeading.innerHTML = products[i].name;
+      productContainerImage.src = products[i].image;
+      productContainerImage.alt = products[i].name;
+      productContainerHeading.innerHTML = products[i].name;
+      productContainerDescription.innerHTML = products[i].description;
+      productContainerPrice.innerHTML =
+        products[i].price.toString() + "&#x20bf;";
+      productContainerFormInput.type = "number";
+      productContainerFormInput.min = "1";
+      productContainerFormInput.value = "1";
+      productContainerFormButton.innerHTML = "Lägg till i varukorgen";
+
+      //Placerar elementen
+      productPage?.appendChild(productHeading);
+      productPage?.appendChild(productContainer);
+      productContainer?.appendChild(productContainerImage);
+      productContainer?.appendChild(productContainerInfo);
+      productContainerInfo?.appendChild(productContainerHeading);
+      productContainerInfo?.appendChild(productContainerDescription);
+      productContainerInfo?.appendChild(productContainerPrice);
+      productContainerInfo?.appendChild(productContainerForm);
+      productContainerForm?.appendChild(productContainerFormInput);
+      productContainerForm?.appendChild(productContainerFormButton);
+
+      //Avsluta for-loopen
+      break;
     }
   }
 }
