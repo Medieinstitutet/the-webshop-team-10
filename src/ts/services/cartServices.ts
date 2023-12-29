@@ -86,7 +86,7 @@ export function createCartHtml() {
     cartItemImg.alt = cart[i].product.name;
     cartItemTitle.innerHTML = cart[i].product.name;
     cartItemPriceEach.innerHTML =
-      "Styckpris: " + cart[i].product.price.toString() + "&#x20bf;";
+      "Styckpris: " + cart[i].product.price.toFixed(3) + "&#x20bf;";
     cartItemButtonDecrease.innerHTML = "-";
     cartItemAmount.innerHTML = cart[i].quantity.toString();
     cartItemButtonIncrease.innerHTML = "+";
@@ -95,7 +95,7 @@ export function createCartHtml() {
     //Lägger till produktens totalpris till varukorgens totalpris
     cartTotal += productTotalPrice;
     cartItemPriceTotal.innerHTML =
-      "Totalpris: " + productTotalPrice.toString() + "&#x20bf;";
+      "Totalpris: " + productTotalPrice.toFixed(3) + "&#x20bf;";
     cartItemButtonDelete.innerHTML = "Ta bort";
 
     //Placerar elementen
@@ -139,7 +139,7 @@ export function createCartHtml() {
     });
   }
   //Lägger till totalbeloppet för kassan
-  cartTotalPrice.innerHTML = "Total: " + cartTotal.toString() + "&#x20bf;";
+  cartTotalPrice.innerHTML = "Total: " + cartTotal.toFixed(3) + "&#x20bf;";
 
   //Kontrollerar om varukorgen är tom och skriver ut det
   (cartEmpty as HTMLSpanElement).innerHTML = "";
