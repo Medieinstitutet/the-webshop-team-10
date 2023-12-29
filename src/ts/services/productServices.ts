@@ -72,8 +72,9 @@ createProductsHtml();
 //Skapa html för enskilda produktsidor
 
 //Kontrollera och hitta produktid från query i url:en
-
 if (document.location.search) {
-  let params = document.location.search;
-  console.log(params);
+  //Ta fram vad som finns i queryn "id". Ger 0 ifall det inte finns någonting.
+  let params: URLSearchParams = new URLSearchParams(document.location.search);
+  let productId: number = parseInt(params.get("id") || "0");
+  console.log(productId);
 }
