@@ -1,44 +1,26 @@
 import { Product } from "../models/Product";
 import { addToCart } from "./cartServices";
 
-export const p1: Product = new Product(
-  1,
-  "Tiger",
-  5,
-  2,
-  "cute Tiger",
-  0,
-  "src/img/tiger.jpg",
-  "Indien"
-);
-export const p2: Product = new Product(
-  2,
-  "Lejon",
-  4,
-  3,
-  "cute Lejon",
-  0,
-  "src/img/lejon.jpg",
-  "Kenya"
-);
-export const p3: Product = new Product(3,"Chameleon",4, 3, "Cute Chameleon", 0,"/src/img/chameleon.jpg","Kenya");
-export const p4: Product = new Product(4,"Tarsier",4, 3, "Cute Chameleon", 0,"/src/img/tarsier.jpg","Kenya");
-export const p5: Product = new Product(5,"Quokka",4, 3, "Cute Quokka", 0,"/src/img/quokka.jpg","Kenya");
-export const p6: Product = new Product(6,"Puffin",4, 3, "Cute Puffin", 0,"/src/img/puffin.jpg","Kenya");
+export const p1: Product = new Product(1,"Tiger", 5, 2,"Tiger är ett stort och majestätiskt kattdjur som lever främst i Asien. Deras orange och svart mönstrade päls samt deras karakteristiska vertikala ränder gör dem till omedelbart igenkännliga djur.", 0, "src/img/tiger.jpg","Indien");
+export const p2: Product = new Product(2,"Lejon", 4, 3,"Kungar i djungeln.Med sin kraftfulla kroppsbyggnad och imponerande man är lejon perfekta för samlare av exotiska arter.", 0, "src/img/lejon.jpg","Kenya");
+export const p3: Product = new Product(3,"Chameleon",5,0.05 , "En färgstark reptil med förmågan att ändra färg beroende på sin omgivning. Perfekt som sällskapsdjur för de som är fascinerade av djur med unika anpassningar", 0,"/src/img/chameleon.jpg","Madagaskar");
+export const p4: Product = new Product(4,"Tarsier",3.5, 0.035, "En liten primat med stora ögon och en smidig kropp. Denna nattaktiva art är känd för sitt fantastiska hoppande och är ett utmärkt val för dem som önskar sig en apart men snäll vän.", 0,"/src/img/tarsier.jpg","Borneo och Sumatra");
+export const p5: Product = new Product(5,"Quokka",4, 3, "En lekfull och socialt djur som är inhemskt för Australien. Med sitt charmiga leende och vänliga natur är kvokkan det perfekta valet för alla som älskar att ha roligt och sprida glädje.", 0,"/src/img/quokka.jpg","Australien");
+export const p6: Product = new Product(6,"Puffin",4, 3, "En färgglad och charmerande sjöfågel som är känd för sitt karaktäristiska utseende och sitt vackra flyg. Med sin unika personlighet är lunnefågeln ett utmärkt val för de som älskar naturen och det marina livet.", 0,"/src/img/puffin.jpg","Kenya");
 export const p7: Product = new Product(7,"Fox",4, 3, "Cute Fox", 0,"/src/img/fox.jpg","Kenya");
-export const p8: Product = new Product(8,"Tortoise",4, 3, "Cute Tortoise", 0,"/src/img/tortoise.jpg","Kenya");
-export const p9: Product = new Product(9,"Cougar",4, 3, "Cute Fox", 0,"/src/img/cougar-275946_640.jpg","Kenya");
-export const p10: Product = new Product(10,"Leopard",4, 3, "Cute Fox", 0,"/src/img/leopard-1.jpg","Kenya");
-export const p11: Product = new Product(11,"Mammals",4, 3, "Cute Mammals", 0,"/src/img/mammals-3218028_640.jpg","Kenya");
-export const p12: Product = new Product(12,"Amur Tiger",4, 3, "Cute Tiger", 0,"/src/img/tigeramur.jpg","Kenya");
-export const p13: Product = new Product(13,"Leopard",4, 3, "Cute Leopard", 0,"/src/img/leopard-2.jpg","Kenya");
-export const p14: Product = new Product(14,"Lemur",4, 3, "Cute Le", 0,"/src/img/lemurs-1010643_640.jpg","Kenya");
-export const p15: Product = new Product(15,"Koala",4, 3, "Cute coala", 0,"/src/img/koalas-61189_640.jpg","Kenya");
-export const p16: Product = new Product(16,"Raccon",4, 3, "Cute raccoon", 0,"/src/img/raccoon.jpg","Kenya");
-export const p17: Product = new Product(17,"Monkey",4, 3, "Cute Monkey", 0,"/src/img/monkey.jpg","Kenya");
-export const p18: Product = new Product(18,"Meerkat",4, 3, "Cute Meerkat",0, "/src/img/meerkat.jpg","Kenya");
-export const p19: Product = new Product(19,"Red Panda (baby)",4, 3, "Cute Panda", 0,"/src/img/red-panda.jpg","Kenya");
-export const p20: Product = new Product(20,"Flamingo",4, 3, "Cute Leopard", 0,"/src/img/flamingo.jpg","Kenya");
+export const p8: Product = new Product(8,"Tortoise",8, 0.003, " En tålig och långlivad sköldpadda som är en populär favorit bland reptilälskare. Denna landsköldpadda är en perfekt för dem som vill ha ett sällskapsdjur som ger stillsamhet och lugn.", 0,"/src/img/tortoise.jpg","Kenya");
+export const p9: Product = new Product(9,"Puma",5, 0.06, "En majestätisk stor katt som är känd för sin kraft och smidighet. Med sitt eleganta utseende och sin jägarkompetens är puman ett fantastiskt val för dem som har en passion för vilda katter.", 0,"/src/img/cougar-275946_640.jpg","Kenya");
+export const p10: Product = new Product(10,"Leopard",4, 0.05, "En vacker och kraftfull stor katt som är känd för sina vackra fläckar och smidighet. Leoparden är den ultimata symbolen för elegans och styrka och är ett fantastiskt val för dem som vill ha ett unikt sällskapsdjur.", 0,"/src/img/leopard-1.jpg","Kenya");
+export const p11: Product = new Product(11,"Fennec Fox",1.5, 0.005, "Cute Fennec", 0,"/src/img/mammals-3218028_640.jpg","Nord Afrika");
+export const p12: Product = new Product(12,"Amur Tiger",4, 0.06, " Amurtiger är en underart av tigrar och är känd för sin starka och robusta kropp. Dessa vackra kattdjur är infödda i östra Sibirien och Nordkina och har vanligtvis en gulaktig-orange päls med svarta ränder. Amurtiger anses vara hotade och kan vara en ovanlig och värdefull tillgång för entusiaster av exotiska djur.", 0,"/src/img/tigeramur.jpg","Östra Sibirien och Nordkina");
+export const p13: Product = new Product(13,"Leopard",6, 0.08, "Cute Leopard", 0,"/src/img/leopard-2.jpg","Kenya");
+export const p14: Product = new Product(14,"Lemur",3, 0.015, " En exotisk primat från Madagaskar med stora, uttrycksfulla ögon och en lång svans. Med sin lekfulla personlighet och sin unika levnadsmiljö är lemur en perfekt vän för de som älskar att utforska och upptäcka.", 0,"/src/img/lemurs-1010643_640.jpg","Kenya");
+export const p15: Product = new Product(15,"Koala",1.5, 0.045, "En ikonisk björn med ett mjukt, plyschigt utseende och en söt noshörning. Med sin avslappnade livsstil och sin kärvänliga natur är koalan ett underbart sällskapsdjur för alla som vill ha en gosig och tillgiven vän.", 0,"/src/img/koalas-61189_640.jpg","Avstralien");
+export const p16: Product = new Product(16,"Raccon",5, 0.085, "Intelligent, nyfiken och skicklig på att använda sina tassar för att manipulera föremål.", 0,"/src/img/raccoon.jpg","Kenya");
+export const p17: Product = new Product(17,"Monkey",2, 0.050, "Cute Monkey", 0,"/src/img/monkey.jpg","Kenya");
+export const p18: Product = new Product(18,"Meerkat",1.9, 0.035, "En charmig och social liten gnagare som är känd för sin förmåga att leva i kolonier och för sin vaksamhet. Surikaten är ett fantastiskt sällskapsdjur för dem som älskar att ha aktivitet runt omkring sig och som värdesätter gemenskap och samhörighet.",0, "/src/img/meerkat.jpg","Södra Afrika");
+export const p19: Product = new Product(19,"Röd Panda ",1.2,0.08 , "Röda pandor, även kallade små pandor, är små, trädlevande djur som är inhemska i Himalaya-regionen. Med sin unika kombination av rödbrun päls, långa svans och roliga ansiktsuttryck ses de ofta som en hybrid mellan räv och panda. Dessa livliga varelser har blivit populära för sin gullighet och charm.)", 0,"/src/img/red-panda.jpg","Kina");
+export const p20: Product = new Product(20,"Flamingo",2, 0.025, "Flamingos är stora fåglar med långa, böjda nackar och färgglada fjädrar. Deras karakteristiska rosa färg kommer från det pigment de får genom sin kost. Flamingos är kända för sina eleganta kroppshållningar och flockbeteende.", 0,"/src/img/flamingo.jpg","Sydamerika");
 
 
 
