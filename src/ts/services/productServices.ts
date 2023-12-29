@@ -75,6 +75,13 @@ createProductsHtml();
 if (document.location.search) {
   //Ta fram vad som finns i queryn "id". Ger 0 ifall det inte finns någonting.
   let params: URLSearchParams = new URLSearchParams(document.location.search);
-  let productId: number = parseInt(params.get("id") || "0");
-  console.log(productId);
+  let productQueryId: number = parseInt(params.get("id") || "0");
+
+  //Loopar igenom alla produkter
+  for (let i = 0; i < products.length; i++) {
+    //Om det finns en produkt som har samma id som i queryn så genererar den html för den produkten.
+    if (productQueryId === products[i].id) {
+      console.log(productQueryId, products[i]);
+    }
+  }
 }
