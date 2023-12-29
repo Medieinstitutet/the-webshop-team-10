@@ -23,9 +23,10 @@ export const p2: Product = new Product(
 );
 export const products: Product[] = [p1, p2];
 
-const productsContainer = document.getElementById("productsContainer");
 //Fuktion för att skapa html för produkter.
-const createProductsHtml = () => {
+export const createProductsHtml = () => {
+  const productsContainer = document.getElementById("productsContainer");
+
   //Loopar igenom hela products och genererar html.
   for (let i = 0; i < products.length; i++) {
     //Skapar element
@@ -66,8 +67,6 @@ const createProductsHtml = () => {
     });
   }
 };
-
-createProductsHtml();
 
 //Skapa html för enskilda produktsidor
 export const createProductHtml = () => {
@@ -164,5 +163,3 @@ export const createProductHtml = () => {
     }
   }
 };
-
-createProductHtml();
