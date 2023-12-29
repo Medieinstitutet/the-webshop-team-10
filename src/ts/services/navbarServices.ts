@@ -1,7 +1,5 @@
 // Skapar header elementet
-const header = document.createElement('header');
-header.className = 'header';
-header.id = 'header';
+const header = document.getElementById('header');
 
 // Skapar navbar elementet
 const navbar = document.createElement('nav');
@@ -72,6 +70,17 @@ cartButton.innerHTML = 'Varukorg';
 const hamburgerMenu = document.createElement('div');
 hamburgerMenu.className = 'hamburger-menu';
 
+//Skapar hamburger innehållet
+const hamburgerSpan1 = document.createElement('span');
+hamburgerSpan1.className = 'hamburger-menu__bar1';
+hamburgerMenu.appendChild(hamburgerSpan1);
+const hamburgerSpan2 = document.createElement('span');
+hamburgerSpan2.className = 'hamburger-menu__bar2';
+hamburgerMenu.appendChild(hamburgerSpan2);
+const hamburgerSpan3 = document.createElement('span');
+hamburgerSpan3.className = 'hamburger-menu__bar3';
+hamburgerMenu.appendChild(hamburgerSpan3);
+
 // Lägg till element för att bygga navbar
 navbar.appendChild(navbarLogoImage);
 navbar.appendChild(navbarLogoName);
@@ -80,33 +89,8 @@ navbar.appendChild(cartButton);
 navbar.appendChild(hamburgerMenu);
 
 // Lägg till navbar i header och header i bodyn
-header.appendChild(navbar);
-document.body.appendChild(header);
+header?.appendChild(navbar);
 
 
-
-/*<header class="header" id="header">
-<nav class="navbar">
-  <img class="navbar__logo-image" src="" alt="Logo" />
-  <a class="navbar__logo-name" href="">Animals catalogue</a>
-
-  <ul class="navbar__ul">
-    <li class="navbar__li"><a class="navbar__link" href="#">Home</a></li>
-    <li class="navbar__li">
-      <a class="navbar__link" href="#">Produkter</a>
-    </li>
-    <li class="navbar__li"><a class="navbar__link" href="#">Kassa</a></li>
-    <li class="navbar__li">
-      <a class="navbar__link" href="#">Om oss</a>
-    </li>
-  </ul>
-  <button id="cartButton">Varukorg</button>
-  <div class="hamburger-menu">
-    <span class="hamburger-menu__bar1"></span>
-    <span class="hamburger-menu__bar2"></span>
-    <span class="hamburger-menu__bar3"></span>
-  </div>
-</nav>
-</header>*/
 
 
