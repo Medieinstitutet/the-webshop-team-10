@@ -68,3 +68,12 @@ const createProductsHtml = () => {
 };
 
 createProductsHtml();
+
+//Skapa html för enskilda produktsidor
+
+//Kontrollera och hitta produktid från query i url:en
+
+if (document.location.search) {
+  let params = document.location.search;
+  console.log(params);
+}
