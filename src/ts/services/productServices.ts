@@ -77,6 +77,10 @@ if (document.location.search) {
   let params: URLSearchParams = new URLSearchParams(document.location.search);
   let productQueryId: number = parseInt(params.get("id") || "0");
 
+  //
+  //LÄGG TILL  FÖR VAD SOM SKA HÄNDA OM ID = 0
+  //
+
   const productPage = document.getElementById("productPage");
   //Loopar igenom alla produkter
   for (let i = 0; i < products.length; i++) {
@@ -132,6 +136,16 @@ if (document.location.search) {
       productContainerInfo?.appendChild(productContainerForm);
       productContainerForm?.appendChild(productContainerFormInput);
       productContainerForm?.appendChild(productContainerFormButton);
+
+      //Funktionalitet för att lägga till produkten i varukorgen
+      productContainerForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        //Hämtar numret från productContainerFormInput. Ger värdet 1 ifall något blir fel.
+        const quantity: number = parseInt(productContainerFormInput.value) || 1;
+
+        addToCart(products[i], quantity);
+      });
 
       //Avsluta for-loopen
       break;
