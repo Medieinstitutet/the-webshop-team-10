@@ -1,8 +1,11 @@
 import { cart } from "../main";
 import { Product } from "../models/Product";
 import { CartItem } from "../models/CartItem";
-import { p1 } from "./productServices";
-import { p2 } from "./productServices";
+
+//Alla variabler som behövs för cart
+const cartContainer = document.getElementById("cartContainer");
+const cartUl = document.getElementById("cartItems");
+const cartTotalPrice = document.getElementById("cartTotalPrice");
 
 // Funktion för att lägga till produkter i cart. Tar emot produkt och antal.
 export const addToCart = (product: Product, quantity: number) => {
@@ -20,14 +23,12 @@ export const addToCart = (product: Product, quantity: number) => {
   createCartHtml();
 };
 
-const cartButton = document.getElementById("cartButton");
-cartButton?.addEventListener("click", () => {
-  addToCart(p1, 1);
-  addToCart(p2, 1);
-});
+//Funktion för att göra cart synlig eller inte
+export const toggleCart = () => {
+  cartContainer?.classList.toggle("cart-container__visible");
+  cartContainer?.classList.toggle("cart-container__invisible");
+};
 
-const cartUl = document.getElementById("cartItems");
-const cartTotalPrice = document.getElementById("cartTotalPrice");
 //Fuktion för att skapa html för cart.
 export function createCartHtml() {
   //Tömmer listan
