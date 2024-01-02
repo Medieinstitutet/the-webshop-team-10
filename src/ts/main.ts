@@ -9,6 +9,7 @@ import {
   createProductHtml,
   createProductsHtml,
 } from "./services/productServices";
+import { createCheckoutHtml } from "./services/checkoutServices";
 
 export const cart: CartItem[] = [];
 
@@ -40,3 +41,4 @@ console.log(cart);
 createCartHtml();
 createProductsHtml();
 createProductHtml();
+createCheckoutHtml();
