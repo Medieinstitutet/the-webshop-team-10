@@ -9,7 +9,8 @@ import {
   createProductHtml,
   createProductsHtml,
 } from "./services/productServices";
-import { createCheckoutHtml } from "./services/checkoutServices";
+import { createCheckoutHtml } from "./services/checkoutServices"
+
 
 export const cart: CartItem[] = [];
 
@@ -42,3 +43,4 @@ createCartHtml();
 createProductsHtml();
 createProductHtml();
 createCheckoutHtml();
+

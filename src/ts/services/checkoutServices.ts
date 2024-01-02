@@ -2,6 +2,7 @@ import { cart } from "../main";
 import { Product } from "../models/Product";
 import { CartItem } from "../models/CartItem";
 
+
 //Hitta och skapa variabler som behövs för att konstruera checkouts
 const checkoutContainer = document.getElementById("checkoutContainer");
 
@@ -9,6 +10,7 @@ const checkoutHeading = document.createElement("h3");
 const checkoutEmpty = document.createElement("span");
 const checkoutUl = document.createElement("ul");
 const checkoutTotalPrice = document.createElement("h4");
+const checkoutFormDiv = document.createElement("div")
 const checkoutForm = document.createElement("form")
 const checkoutInputFname = document.createElement("input")
 const checkoutInputLname = document.createElement("input")
@@ -26,6 +28,9 @@ const checkoutApple = document.createElement("input")
 const checkoutAppleLabel = document.createElement("label")
 const checkoutSaveBtn = document.createElement("input")
 const checkoutSaveBtnLabel = document.createElement("label")
+const checkoutInputDiscount = document.createElement("input")
+const checkoutInputDiscountBtn = document.createElement("Button")
+
 
 const checkoutButton = document.createElement("button");
 
@@ -53,6 +58,9 @@ checkoutApple.className = "checkout-input__apple";
 checkoutAppleLabel.className = "checkout-input__apple-label";
 checkoutSaveBtn.className = "checkout-input__save-btn";
 checkoutSaveBtnLabel.className = "checkout-input__save-btn-label";
+checkoutInputDiscount.className = "checkout-input__input-discount";
+checkoutInputDiscountBtn.className = "checkout-input__input-discount-btn";
+checkoutFormDiv.className = "checkout-input__div";
 
 
 
@@ -73,19 +81,33 @@ checkoutInputCity.placeholder = "Stad"
 checkoutInputZip.type = "text"
 checkoutInputZip.placeholder = "Postkod"
 checkoutSwish.type = "radio"
+checkoutSwish.name = "radio"
 checkoutSwishLabel.innerHTML = "Swish"
 checkoutVisa.type = "radio"
+checkoutVisa.name = "radio"
 checkoutVisaLabel.innerHTML = "Visa"
 checkoutApple.type = "radio"
+checkoutApple.name = "radio"
 checkoutAppleLabel.innerHTML = "Apple Pay"
-checkoutSaveBtn.type = "checkbox"
 checkoutSaveBtnLabel.innerHTML = "Spara din kontakt information för nästa gång"
+checkoutSaveBtn.type = "checkbox"
+checkoutInputDiscount.type = "text"
+checkoutInputDiscount.innerHTML = "Ange presentkort kod eller rabattkod"
+checkoutInputDiscountBtn.innerHTML = "Använd"
+checkoutInputDiscount.placeholder = "Rabattkod"
+
+
 
 
 checkoutContainer?.appendChild(checkoutHeading);
 checkoutContainer?.appendChild(checkoutEmpty);
 checkoutContainer?.appendChild(checkoutUl);
 checkoutContainer?.appendChild(checkoutTotalPrice);
+checkoutContainer?.appendChild(checkoutFormDiv);
+checkoutContainer?.appendChild(checkoutButton);
+
+checkoutFormDiv.appendChild(checkoutForm);
+
 
 checkoutForm.appendChild(checkoutInputFname);
 checkoutForm.appendChild(checkoutInputLname);
@@ -95,19 +117,20 @@ checkoutForm.appendChild(checkoutInputCountry);
 checkoutForm.appendChild(checkoutInputAdress);
 checkoutForm.appendChild(checkoutInputCity);
 checkoutForm.appendChild(checkoutInputZip);
+
 checkoutForm.appendChild(checkoutSwish);
 checkoutForm.appendChild(checkoutSwishLabel);
 checkoutForm.appendChild(checkoutVisa);
 checkoutForm.appendChild(checkoutVisaLabel);
 checkoutForm.appendChild(checkoutApple);
 checkoutForm.appendChild(checkoutAppleLabel);
-checkoutForm.appendChild(checkoutSaveBtnLabel);
 
 checkoutForm.appendChild(checkoutSaveBtn);
+checkoutForm.appendChild(checkoutSaveBtnLabel);
 
+checkoutForm.appendChild(checkoutInputDiscount);
+checkoutForm.appendChild(checkoutInputDiscountBtn);
 
-checkoutContainer?.appendChild(checkoutForm);
-checkoutContainer?.appendChild(checkoutButton);
 
 
 
@@ -194,47 +217,53 @@ export function createCheckoutHtml() {
     cartItemButtonsDiv.appendChild(cartItemButtonIncrease);
     cartItemBottomDiv.appendChild(cartItemPriceTotal);
     cartItemBottomDiv.appendChild(cartItemButtonDelete);
+
+
+    
+      //Funktionalitet för knappar
+      cartItemButtonIncrease.addEventListener("click", () => {
+        cart[i].quantity++;
+        createCheckoutHtml();
+      });
+  
+      cartItemButtonDecrease.addEventListener("click", () => {
+        //Om det bara finns en av produkten fråga om man vill ta bort
+        if (cart[i].quantity === 1) {
+          if (confirm("Vill du ta bort produkten från varukorgen?")) {
+            cart.splice(i, 1);
+          }
+          createCheckoutHtml();
+        }
+        if (cart[i].quantity > 1) {
+          cart[i].quantity--;
+          createCheckoutHtml();
+        }
+      });
+  
+      cartItemButtonDelete.addEventListener("click", () => {
+        if (confirm("Vill du ta bort produkten från varukorgen?")) {
+          cart.splice(i, 1);
+        }
+        createCheckoutHtml();
+      });
+    }
+    //Lägger till totalbeloppet för kassan
+    checkoutTotalPrice.innerHTML = "Total: " + cartTotal.toFixed(3) + "&#x20bf;";
+  
+    //Kontrollerar om varukorgen är tom och skriver ut det
+    (checkoutEmpty as HTMLSpanElement).innerHTML = "";
+    if (cart.length === 0) {
+      (checkoutEmpty as HTMLSpanElement).innerHTML = "Varukorgen är tom";
+    }
+  
+    //Sparar till LS
+    localStorage.setItem("Group10Cart", JSON.stringify(cart));
   }
-} 
+  
+
+  
 
 
 
-//     //Funktionalitet för knappar
-//     cartItemButtonIncrease.addEventListener("click", () => {
-//       cart[i].quantity++;
-//       createCartHtml();
-//     });
 
-//     cartItemButtonDecrease.addEventListener("click", () => {
-//       //Om det bara finns en av produkten fråga om man vill ta bort
-//       if (cart[i].quantity === 1) {
-//         if (confirm("Vill du ta bort produkten från varukorgen?")) {
-//           cart.splice(i, 1);
-//         }
-//         createCartHtml();
-//       }
-//       if (cart[i].quantity > 1) {
-//         cart[i].quantity--;
-//         createCartHtml();
-//       }
-//     });
-
-//     cartItemButtonDelete.addEventListener("click", () => {
-//       if (confirm("Vill du ta bort produkten från varukorgen?")) {
-//         cart.splice(i, 1);
-//       }
-//       createCartHtml();
-//     });
-//   }
-//   //Lägger till totalbeloppet för kassan
-//   checkoutTotalPrice.innerHTML = "Total: " + cartTotal.toFixed(3) + "&#x20bf;";
-
-//   //Kontrollerar om varukorgen är tom och skriver ut det
-//   (checkoutEmpty as HTMLSpanElement).innerHTML = "";
-//   if (cart.length === 0) {
-//     (checkoutEmpty as HTMLSpanElement).innerHTML = "Varukorgen är tom";
-//   }
-
-//   //Sparar till LS
-//   localStorage.setItem("Group10Cart", JSON.stringify(cart));
-// }
+  
