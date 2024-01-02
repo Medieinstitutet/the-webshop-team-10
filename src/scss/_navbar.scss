@@ -1,0 +1,68 @@
+@use "./_variables" as v;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 80px;
+  background-color: v.$color-primary;
+
+  &__ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-decoration: none;
+    width: 600px;
+  }
+  &__li {
+    height: 100%;
+    flex-grow: 1;
+
+    a {
+      color: v.$color-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: v.$font-navbar-size;
+    }
+    a:hover {
+      background-color: v.$color-secondary;
+      color: v.$color-primary;
+    }
+  }
+  &__logo-image {
+    display: flex;
+  }
+  &__logo-name {
+    display: none;
+  }
+}
+.hamburger-menu {
+  display: none;
+}
+
+#cartButton {
+  height: 100%;
+  padding: 0 20px;
+  font-family: v.$font-sans;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: v.$font-navbar-size;
+  cursor: pointer;
+  color: v.$color-primary;
+  background-color: v.$color-secondary;
+  border: 0;
+  &:hover {
+    color: v.$color-secondary;
+    background-color: v.$color-primary;
+  }
+}
