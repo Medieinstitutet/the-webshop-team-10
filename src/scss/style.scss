@@ -8,11 +8,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
+  font-family: v.$font-sans;
 }
+
 a {
   text-decoration: none;
 }
+
+button {
+  cursor: pointer;
+  font-family: v.$font-sans;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -43,13 +50,5 @@ a {
   gap: 20px;
   &__image {
     max-width: 40vw;
-  }
-}
-.cart-container {
-  background-color: rgb(243, 243, 227);
-  display: none;
-
-  &__visible {
-    display: block;
   }
 }

@@ -11,12 +11,12 @@ const cartUl = document.createElement("ul");
 const cartTotalPrice = document.createElement("h4");
 const cartCheckoutLink = document.createElement("a");
 
-cartHeading.className = "cart-contianer__heading";
+cartHeading.className = "cart-container__heading";
 cartHeading.innerHTML = "Varukorg";
-cartEmpty.className = "cart-contianer__empty";
+cartEmpty.className = "cart-container__empty";
 cartUl.className = "cart-items";
-cartTotalPrice.className = "cart-contianer__total-price";
-cartCheckoutLink.className = "cart-contianer__checkout-link";
+cartTotalPrice.className = "cart-container__total-price";
+cartCheckoutLink.className = "cart-container__checkout-link";
 cartCheckoutLink.href = "#";
 cartCheckoutLink.innerHTML = "Checkout";
 
