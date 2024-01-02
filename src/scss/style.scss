@@ -1,6 +1,7 @@
 @use "./_variables" as v;
 @use "./_cart";
 @use "./_navbar";
+@use "./_product";
 @use "./_products";
 @use "./_typography";
 
@@ -50,13 +51,4 @@ body {
   width: clamp(1000px, 85vw, 85vw);
   min-height: 100vh;
   border-bottom: 1px dotted black;
-}
-
-.product-container {
-  display: flex;
-  width: 100%;
-  gap: 20px;
-  &__image {
-    max-width: 40vw;
-  }
 }
