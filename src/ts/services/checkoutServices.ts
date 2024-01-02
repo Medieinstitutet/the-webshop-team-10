@@ -20,27 +20,40 @@ const checkoutInputCountry = document.createElement("input")
 const checkoutInputAdress = document.createElement("input")
 const checkoutInputCity = document.createElement("input")
 const checkoutInputZip = document.createElement("input")
+
+const checkoutSwishDiv = document.createElement("div")
 const checkoutSwish = document.createElement("input")
 const checkoutSwishLabel = document.createElement("label")
-const checkoutVisa = document.createElement("input")
-const checkoutVisaLabel = document.createElement("label")
-const checkoutApple = document.createElement("input")
-const checkoutAppleLabel = document.createElement("label")
+const checkoutSwisNumber = document.createElement("input")
+
 const checkoutSaveBtn = document.createElement("input")
 const checkoutSaveBtnLabel = document.createElement("label")
 const checkoutInputDiscount = document.createElement("input")
 const checkoutInputDiscountBtn = document.createElement("Button")
 
+const checkoutVisaDiv = document.createElement("div")
+const checkoutVisa = document.createElement("input")
+const checkoutVisaLabel = document.createElement("label")
+
+const checkoutAppleDiv = document.createElement("div")
+const checkoutApple = document.createElement("input")
+const checkoutAppleLabel = document.createElement("label")
+
+const checkoutCardNumber = document.createElement("input")
+const checkoutCardName = document.createElement("input")
+const checkoutCardSecurityCode = document.createElement("input")
+const checkoutCardExpire = document.createElement("input")
 
 const checkoutButton = document.createElement("button");
 
 checkoutHeading.className = "checkout-contianer__heading";
-checkoutHeading.innerHTML = "Varukorg";
+checkoutHeading.innerHTML = "Utcheckning";
 checkoutEmpty.className = "checkout-contianer__empty";
 checkoutUl.className = "checkout-items";
 checkoutTotalPrice.className = "checkout-contianer__total-price";
 checkoutButton.className = "checkout-contianer__checkout-button";
 checkoutButton.innerHTML = "Bekräfta köp";
+
 checkoutForm.className = "checkout-contianer__checkout-form";
 checkoutInputFname.className = "checkout-input__first-name";
 checkoutInputLname.className = "checkout-input__last-name";
@@ -50,8 +63,10 @@ checkoutInputCountry.className = "checkout-input__country";
 checkoutInputAdress.className = "checkout-input__address";
 checkoutInputCity.className = "checkout-input__city";
 checkoutInputZip.className = "checkout-input__zip";
+
 checkoutSwish.className = "checkout-input__swish";
 checkoutSwishLabel.className = "checkout-input__checkout-swish-label";
+checkoutSwisNumber.className = "checkout-input__checkoutSwisNumber"
 checkoutVisa.className = "checkout-input__visa";
 checkoutVisaLabel.className = "checkout-input__visa-label";
 checkoutApple.className = "checkout-input__apple";
@@ -60,7 +75,15 @@ checkoutSaveBtn.className = "checkout-input__save-btn";
 checkoutSaveBtnLabel.className = "checkout-input__save-btn-label";
 checkoutInputDiscount.className = "checkout-input__input-discount";
 checkoutInputDiscountBtn.className = "checkout-input__input-discount-btn";
-checkoutFormDiv.className = "checkout-input__div";
+checkoutFormDiv.className = "checkout-input__form-div";
+checkoutVisaDiv.className = "checkout__visa-div";
+checkoutSwishDiv.className = "checkout__swish-div";
+checkoutAppleDiv.className = "checkout__apple-div";
+
+checkoutCardNumber.className = "checkout__card-number";
+checkoutCardName.className = "checkout__card-name";
+checkoutCardExpire.className = "checkout__card-expire";
+checkoutCardSecurityCode.className = "checkout__card-security-code";
 
 
 
@@ -82,12 +105,17 @@ checkoutInputZip.type = "text"
 checkoutInputZip.placeholder = "Postkod"
 checkoutSwish.type = "radio"
 checkoutSwish.name = "radio"
+checkoutSwish.id = "radio1"
 checkoutSwishLabel.innerHTML = "Swish"
+checkoutSwisNumber.type = "number"
+checkoutSwisNumber.placeholder = "070 123 45 67"
 checkoutVisa.type = "radio"
 checkoutVisa.name = "radio"
+checkoutVisa.id = "radio2"
 checkoutVisaLabel.innerHTML = "Visa"
 checkoutApple.type = "radio"
 checkoutApple.name = "radio"
+checkoutApple.id = "radio3"
 checkoutAppleLabel.innerHTML = "Apple Pay"
 checkoutSaveBtnLabel.innerHTML = "Spara din kontakt information för nästa gång"
 checkoutSaveBtn.type = "checkbox"
@@ -95,7 +123,14 @@ checkoutInputDiscount.type = "text"
 checkoutInputDiscount.innerHTML = "Ange presentkort kod eller rabattkod"
 checkoutInputDiscountBtn.innerHTML = "Använd"
 checkoutInputDiscount.placeholder = "Rabattkod"
-
+checkoutCardNumber.type = "number"
+checkoutCardNumber.placeholder = "1234 5678 90123456"
+checkoutCardName.type = "text"
+checkoutCardName.placeholder = "Ex. John Doe"
+checkoutCardExpire.type = "number"
+checkoutCardExpire.placeholder = "01/19"
+checkoutCardSecurityCode.type = "number"
+checkoutCardSecurityCode.placeholder = "* * *"
 
 
 
@@ -104,10 +139,13 @@ checkoutContainer?.appendChild(checkoutEmpty);
 checkoutContainer?.appendChild(checkoutUl);
 checkoutContainer?.appendChild(checkoutTotalPrice);
 checkoutContainer?.appendChild(checkoutFormDiv);
+checkoutContainer?.appendChild(checkoutVisaDiv);
+checkoutContainer?.appendChild(checkoutSwishDiv);
 checkoutContainer?.appendChild(checkoutButton);
 
-checkoutFormDiv.appendChild(checkoutForm);
 
+checkoutFormDiv.appendChild(checkoutForm);
+checkoutFormDiv.appendChild(checkoutVisaDiv);
 
 checkoutForm.appendChild(checkoutInputFname);
 checkoutForm.appendChild(checkoutInputLname);
@@ -125,6 +163,12 @@ checkoutForm.appendChild(checkoutVisaLabel);
 checkoutForm.appendChild(checkoutApple);
 checkoutForm.appendChild(checkoutAppleLabel);
 
+checkoutVisaDiv.appendChild(checkoutCardName);
+checkoutVisaDiv.appendChild(checkoutCardNumber);
+checkoutVisaDiv.appendChild(checkoutCardExpire);
+checkoutVisaDiv.appendChild(checkoutCardSecurityCode); 
+
+checkoutSwishDiv.appendChild(checkoutSwisNumber);
 checkoutForm.appendChild(checkoutSaveBtn);
 checkoutForm.appendChild(checkoutSaveBtnLabel);
 
@@ -132,6 +176,22 @@ checkoutForm.appendChild(checkoutInputDiscount);
 checkoutForm.appendChild(checkoutInputDiscountBtn);
 
 
+
+checkoutVisa.addEventListener("change", () => {
+  if (checkoutVisa.checked) {
+    checkoutVisaDiv.style.display = "block";
+  } else {
+    checkoutVisaDiv.style.display = "none";
+  }
+});
+
+checkoutSwish.addEventListener("change", () => {
+  if (checkoutSwish.checked) {
+    checkoutSwishDiv.style.display = "block";
+  } else {
+    checkoutSwishDiv.style.display = "none";
+  }
+});
 
 
 export const addToCart = (product: Product, quantity: number) => {
@@ -264,6 +324,9 @@ export function createCheckoutHtml() {
   
 
 
+  
+  
+  
 
 
   
