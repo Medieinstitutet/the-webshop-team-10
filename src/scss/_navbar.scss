@@ -1,7 +1,7 @@
 @use "./_variables" as v;
 
 .navbar {
-  height: 80px;
+  height: v.$navbar-height;
   width: 100vw;
 
   display: flex;

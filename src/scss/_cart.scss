@@ -3,6 +3,7 @@
 .cart-container {
   position: fixed;
   right: 0;
+  top: v.$navbar-height;
   min-width: 50vw;
 
   padding: v.$margin-m;

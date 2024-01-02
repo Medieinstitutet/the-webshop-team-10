@@ -1,6 +1,8 @@
 @use "./_variables" as v;
-@use "./_navbar";
 @use "./_cart";
+@use "./_navbar";
+@use "./_products";
+@use "./_typography";
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap");
 
@@ -9,6 +11,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: v.$font-sans;
+  font-size: 1rem;
 }
 
 a {
@@ -18,6 +21,24 @@ a {
 button {
   cursor: pointer;
   font-family: v.$font-sans;
+  padding: v.$margin-s;
+  font-family: v.$font-sans;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: v.$color-secondary;
+  background-color: v.$color-primary;
+  border: 1px solid v.$color-primary;
+  &:hover {
+    color: v.$color-primary;
+    background-color: v.$color-secondary;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: v.$color-secondary;
 }
 
 .header {
@@ -26,24 +47,11 @@ button {
 }
 
 .main-container {
-  background-color: lightblue;
+  width: clamp(1000px, 85vw, 85vw);
   min-height: 100vh;
   border-bottom: 1px dotted black;
 }
 
-.products-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 300px;
-  row-gap: 20px;
-  column-gap: 20px;
-}
-
-.product-card {
-  &__image {
-    width: 150px;
-  }
-}
 .product-container {
   display: flex;
   width: 100%;
