@@ -1,1 +1,35 @@
 @use "./_variables" as v;
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(300px, 1fr);
+  gap: v.$margin-m;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: v.$margin-s;
+
+  background-color: v.$color-white;
+  color: v.$color-black;
+
+  padding: v.$margin-m;
+  &:hover {
+    background-color: v.$color-hover;
+  }
+  &__image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  &__price {
+  }
+
+  &__button {
+    border: 0;
+    font-size: v.$font-size-s;
+  }
+}

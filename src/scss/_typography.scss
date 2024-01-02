@@ -1,0 +1,16 @@
+@use "./variables" as v;
+
+h2 {
+  font-size: v.$font-size-xl;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  font-weight: 450;
+  margin-block: v.$margin-m;
+}
+
+h3 {
+  font-size: v.$font-size-l;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  font-weight: 450;
+}
