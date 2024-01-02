@@ -129,6 +129,7 @@ checkoutForm.appendChild(checkoutSaveBtn);
 checkoutForm.appendChild(checkoutSaveBtnLabel);
 
 checkoutForm.appendChild(checkoutInputDiscount);
+
 checkoutForm.appendChild(checkoutInputDiscountBtn);
 
 
