@@ -14,10 +14,9 @@ navbarLogoImage.src = ".././src/img/logo2.png";
 navbarLogoImage.alt = "Logo";
 
 // Skapar länk till logans namn (hemsidans namn)
-const navbarLogoName = document.createElement("a");
-navbarLogoName.className = "navbar__logo-name";
-navbarLogoName.href = "#";
-navbarLogoName.innerHTML = "Webbshop Namn...något coolt";
+const navbarLogoLink = document.createElement("a");
+navbarLogoLink.className = "navbar__logo-link";
+navbarLogoLink.href = "index.html";
 
 // Skapa ul elementet
 const navbarUl = document.createElement("ul");
@@ -86,8 +85,8 @@ hamburgerSpan3.className = "hamburger-menu__bar3";
 hamburgerMenu.appendChild(hamburgerSpan3);
 
 // Lägg till element för att bygga navbar
-navbar.appendChild(navbarLogoImage);
-navbar.appendChild(navbarLogoName);
+navbar.appendChild(navbarLogoLink);
+navbarLogoLink.appendChild(navbarLogoImage);
 navbar.appendChild(navbarUl);
 navbar.appendChild(cartButton);
 navbar.appendChild(hamburgerMenu);

@@ -42,10 +42,13 @@
       color: v.$color-primary;
     }
   }
+  &__logo-link {
+    margin-left: v.$margin-m;
+    height: 100%;
+  }
   &__logo-image {
     height: 100%;
     padding: v.$margin-s 0;
-    margin-left: v.$margin-m;
   }
   &__logo-name {
     display: none;
@@ -65,7 +68,7 @@
   cursor: pointer;
   color: v.$color-primary;
   background-color: v.$color-secondary;
-  
+
   border: 0;
   &:hover {
     color: v.$color-secondary;
