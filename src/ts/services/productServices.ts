@@ -125,6 +125,7 @@ export const createProductHtml = () => {
         const productContainerInfo = document.createElement("div");
         const productContainerHeading = document.createElement("h3");
         const productContainerDescription = document.createElement("p");
+        const productContainerCountry = document.createElement("p");  
         const productContainerPrice = document.createElement("span");
         const productContainerForm = document.createElement("form");
         const productContainerFormInput = document.createElement("input");
@@ -138,6 +139,7 @@ export const createProductHtml = () => {
         productContainerHeading.className = "product-container__heading";
         productContainerDescription.className =
           "product-container__description";
+        productContainerCountry.className = "product-container__country";
         productContainerPrice.className = "product-container__price";
         productContainerForm.className = "product-container__form";
         productContainerFormInput.className = "product-container__form-input";
@@ -149,6 +151,7 @@ export const createProductHtml = () => {
         productContainerImage.alt = products[i].name;
         productContainerHeading.innerHTML = products[i].name;
         productContainerDescription.innerHTML = products[i].description;
+        productContainerCountry.innerHTML = products[i].country;
         productContainerPrice.innerHTML =
           products[i].price.toFixed(3) + "&#x20bf;";
         productContainerFormInput.type = "number";
@@ -164,6 +167,7 @@ export const createProductHtml = () => {
         productContainer?.appendChild(productContainerInfo);
         productContainerInfo?.appendChild(productContainerHeading);
         productContainerInfo?.appendChild(productContainerDescription);
+        productContainerInfo?.appendChild(productContainerCountry);
         productContainerInfo?.appendChild(productContainerPrice);
         productContainerInfo?.appendChild(productContainerForm);
         productContainerForm?.appendChild(productContainerFormInput);
