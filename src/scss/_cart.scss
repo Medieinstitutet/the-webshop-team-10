@@ -8,7 +8,7 @@
 
   padding: v.$margin-m;
 
-  background-color: v.$color-secondary;
+  background-color: v.$color-hover;
 
   display: none;
 
@@ -99,7 +99,6 @@
     font-size: v.$font-navbar-size;
     color: v.$color-secondary;
     background-color: v.$color-primary;
-    border: 1px solid v.$color-primary;
     &:hover {
       color: v.$color-primary;
       background-color: v.$color-secondary;
