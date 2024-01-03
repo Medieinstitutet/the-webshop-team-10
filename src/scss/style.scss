@@ -5,6 +5,7 @@
 @use "./_product";
 @use "./_products";
 @use "./_typography";
+@use "./checkout";
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap");
 
@@ -52,12 +53,4 @@ body {
   width: clamp(1000px, 85vw, 85vw);
   min-height: 100vh;
   border-bottom: 1px dotted black;
-}
-
-.invisible {
-  display: none;
-}
-
-.visible {
-  display: block;
 }
