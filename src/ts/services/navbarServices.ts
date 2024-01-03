@@ -27,7 +27,7 @@ const navbarLiHome = document.createElement("li");
 navbarLiHome.className = "navbar__li";
 
 const navbarLinkHome = document.createElement("a");
-navbarLinkHome.href = "#";
+navbarLinkHome.href = "index.html";
 navbarLinkHome.innerHTML = "Hem";
 navbarLiHome.appendChild(navbarLinkHome);
 navbarUl.appendChild(navbarLiHome);
@@ -37,7 +37,7 @@ const navbarLiProduct = document.createElement("li");
 navbarLiProduct.className = "navbar__li";
 
 const navbarLinkProduct = document.createElement("a");
-navbarLinkProduct.href = "#";
+navbarLinkProduct.href = "products.html";
 navbarLinkProduct.innerHTML = "Produkter";
 navbarLiProduct.appendChild(navbarLinkProduct);
 navbarUl.appendChild(navbarLiProduct);
@@ -47,7 +47,7 @@ const navbarLiCart = document.createElement("li");
 navbarLiCart.className = "navbar__li";
 
 const navbarLinkCart = document.createElement("a");
-navbarLinkCart.href = "#";
+navbarLinkCart.href = "checkout.html";
 navbarLinkCart.innerHTML = "Kassa";
 navbarLiCart.appendChild(navbarLinkCart);
 navbarUl.appendChild(navbarLiCart);
