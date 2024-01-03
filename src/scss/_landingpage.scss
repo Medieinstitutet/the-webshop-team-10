@@ -1,29 +1,17 @@
 @use "./_variables" as v;
 
 .landing-page {
-  position: relative;
   width: 100vw;
-  height: calc(100vh - v.$navbar-height);
+  min-height: calc(100vh - v.$navbar-height);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: no-repeat center url("src/img/djungle.jpg");
   background-size: cover;
-  &:after {
-    z-index: -2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - v.$navbar-height);
-    content: "";
-    background-color: v.$color-secondary;
-    opacity: 0.3;
-  }
+
   &__hero-container {
     width: clamp(1000px, 90vw, 90vw);
-    min-height: 50vh;
     background-color: v.$color-white;
     padding: v.$margin-l;
     display: flex;
@@ -62,6 +50,8 @@
 
     background: url(src/img/djungle.jpg);
     background-size: cover;
+    background-clip: text;
+    color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
