@@ -18,8 +18,8 @@ cartEmpty.className = "cart-container__empty";
 cartUl.className = "cart-items";
 cartTotalPrice.className = "cart-container__total-price";
 cartCheckoutLink.className = "cart-container__checkout-link";
-cartCheckoutLink.href = "#";
-cartCheckoutLink.innerHTML = "Checkout";
+cartCheckoutLink.href = "checkout.html";
+cartCheckoutLink.innerHTML = "Gå till kassan";
 
 cartContainer?.appendChild(cartHeading);
 cartContainer?.appendChild(cartEmpty);
@@ -59,6 +59,7 @@ export function createCartHtml() {
     //Skapar element
     const cartItemLi = document.createElement("li");
     const cartItemImg = document.createElement("img");
+    const cartItemLink = document.createElement("a");
     const cartItemTitle = document.createElement("span");
     const cartItemBottomDiv = document.createElement("div");
     const cartItemPriceEach = document.createElement("span");
@@ -72,6 +73,7 @@ export function createCartHtml() {
     //Tilldelar klasser
     cartItemLi.className = "cart-item";
     cartItemImg.className = "cart-item__image";
+    cartItemLink.className = "cart-item__link";
     cartItemTitle.className = "cart-item__title";
     cartItemBottomDiv.className = "cart-item__bottom";
     cartItemPriceEach.className = "cart-item__price";
@@ -85,6 +87,7 @@ export function createCartHtml() {
     //Lägger till produktinformation
     cartItemImg.src = cart[i].product.image;
     cartItemImg.alt = cart[i].product.name;
+    cartItemLink.href = "product.html?id=" + cart[i].product.id;
     cartItemTitle.innerHTML = cart[i].product.name;
     cartItemPriceEach.innerHTML =
       "Styckpris: " + cart[i].product.price.toFixed(3) + "&#x20bf;";
@@ -102,7 +105,8 @@ export function createCartHtml() {
     //Placerar elementen
     cartUl.appendChild(cartItemLi);
     cartItemLi.appendChild(cartItemImg);
-    cartItemLi.appendChild(cartItemTitle);
+    cartItemLi.appendChild(cartItemLink);
+    cartItemLink.appendChild(cartItemTitle);
     cartItemLi.appendChild(cartItemBottomDiv);
     cartItemBottomDiv.appendChild(cartItemPriceEach);
     cartItemBottomDiv.appendChild(cartItemButtonsDiv);
