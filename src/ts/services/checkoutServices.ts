@@ -13,6 +13,7 @@ const checkoutEmpty = document.createElement("span");
 const checkoutUl = document.createElement("ul");
 const checkoutTotalPrice = document.createElement("h4");
 const checkoutFormDiv = document.createElement("div")
+const checkoutInfoSpan = document.createElement("span")
 const checkoutForm = document.createElement("form")
 const checkoutInputFname = document.createElement("input")
 const checkoutInputLname = document.createElement("input")
@@ -23,10 +24,11 @@ const checkoutInputAdress = document.createElement("input")
 const checkoutInputCity = document.createElement("input")
 const checkoutInputZip = document.createElement("input")
 
+
 const checkoutSaveBtn = document.createElement("input")
 const checkoutSaveBtnLabel = document.createElement("label")
 const checkoutInputDiscount = document.createElement("input")
-const checkoutInputDiscountBtn = document.createElement("Button")
+const checkoutInputDiscountBtn = document.createElement("button")
 //Swish
 const checkoutSwishDiv = document.createElement("div")
 const checkoutSwish = document.createElement("button")
@@ -47,11 +49,22 @@ const checkoutCardSecurityCode = document.createElement("input")
 const checkoutCardExpire = document.createElement("input")
 //Utcheckings knapp
 const checkoutButton = document.createElement("button");
+//Skapar grupp förcheckout delen
+const checkoutDiv = document.createElement("div");
+const checkoutCartDiv = document.createElement("div");
+//Skapar grupp förcheckout alla dela
+const checkoutAllDiv = document.createElement("div");
+
+const checkoutSaveInfoDiv = document.createElement("div");
+
+
 
 checkoutHeading.className = "checkout-container__heading";
 checkoutHeading.innerHTML = "Utcheckning";
 checkoutEmpty.className = "checkout-contianer__empty";
 checkoutUl.className = "checkout-items";
+checkoutInfoSpan.className = "checkout-info__span";
+checkoutInfoSpan.innerHTML = "Fyll i dina uppgifter:"
 checkoutTotalPrice.className = "checkout-contianer__total-price";
 checkoutButton.className = "checkout-contianer__checkout-button";
 checkoutButton.innerHTML = "Bekräfta köp";
@@ -86,6 +99,7 @@ checkoutCardNumber.className = "checkout__card-number";
 checkoutCardName.className = "checkout__card-name";
 checkoutCardExpire.className = "checkout__card-expire";
 checkoutCardSecurityCode.className = "checkout__card-security-code";
+checkoutAllDiv.className = "checkout__all-div";
 
 
 
@@ -107,20 +121,18 @@ checkoutInputZip.type = "text"
 checkoutInputZip.placeholder = "Postkod"
 checkoutSwish.innerHTML = "Swish"
 checkoutSwish.type = "button"
-checkoutSwishLabel.innerHTML = "Swish"
 checkoutSwishNumber.type = "number"
-checkoutSwishNumber.placeholder = "070 123 45 67"
+checkoutSwishNumber.placeholder = "Tel: 072 333 02 96"
 checkoutVisa.innerHTML = "Visa"
 checkoutVisa.type = "button"
-checkoutVisaLabel.innerHTML = "Visa"
-checkoutApple.innerHTML = "Apple"
+checkoutApple.innerHTML = "Apple Pay"
 checkoutApple.type = "button"
-checkoutAppleLabel.innerHTML = "Apple Pay"
-checkoutSaveBtnLabel.innerHTML = "Spara din kontaktinformation för ditt nästa köp"
+checkoutSaveBtnLabel.innerHTML = "Spara kontaktinformation"
 checkoutSaveBtn.type = "checkbox"
 checkoutInputDiscount.type = "text"
 checkoutInputDiscount.innerHTML = "Ange presentkort kod eller rabattkod"
 checkoutInputDiscountBtn.innerHTML = "Använd"
+checkoutInputDiscountBtn.type = "button"
 checkoutInputDiscount.placeholder = "Rabattkod"
 checkoutCardNumber.type = "number"
 checkoutCardNumber.placeholder = "1234 5678 90123456"
@@ -132,19 +144,41 @@ checkoutCardSecurityCode.type = "number"
 checkoutCardSecurityCode.placeholder = "* * *"
 
 
-
 checkoutContainer?.appendChild(checkoutHeading);
+checkoutDiv.className = "checkout__div";
+checkoutCartDiv.className = "checkout__cart-div";
+
+checkoutContainer?.appendChild(checkoutDiv);
+checkoutContainer?.appendChild(checkoutCartDiv);
+
+checkoutCartDiv?.appendChild(checkoutUl)
+
+checkoutCartDiv.appendChild(checkoutInputDiscount);
+checkoutCartDiv.appendChild(checkoutInputDiscountBtn);
+checkoutCartDiv?.appendChild(checkoutTotalPrice)
+
+
 checkoutContainer?.appendChild(checkoutEmpty);
-checkoutContainer?.appendChild(checkoutUl);
-checkoutContainer?.appendChild(checkoutTotalPrice);
+checkoutContainer?.appendChild(checkoutAllDiv);
+// checkoutContainer?.appendChild(checkoutUl);
+// checkoutContainer?.appendChild(checkoutTotalPrice);
 checkoutContainer?.appendChild(checkoutFormDiv);
 checkoutContainer?.appendChild(checkoutVisaDiv);
-checkoutContainer?.appendChild(checkoutSwishDiv);
-checkoutContainer?.appendChild(checkoutButton);
+// checkoutContainer?.appendChild(checkoutSwishDiv);
+// checkoutContainer?.appendChild(checkoutButton);
 
+
+checkoutFormDiv?.appendChild(checkoutInfoSpan)
+
+checkoutAllDiv.appendChild(checkoutFormDiv);
+checkoutAllDiv.appendChild(checkoutCartDiv);
 
 checkoutFormDiv.appendChild(checkoutForm);
-checkoutFormDiv.appendChild(checkoutVisaDiv);
+
+
+
+checkoutFormDiv.appendChild(checkoutSwishDiv)
+checkoutSwishDiv.appendChild(checkoutSwishNumber);
 
 checkoutForm.appendChild(checkoutInputFname);
 checkoutForm.appendChild(checkoutInputLname);
@@ -155,36 +189,30 @@ checkoutForm.appendChild(checkoutInputAdress);
 checkoutForm.appendChild(checkoutInputCity);
 checkoutForm.appendChild(checkoutInputZip);
 
+// checkoutForm.appendChild(checkoutSaveBtn);
+// checkoutForm.appendChild(checkoutSaveBtnLabel);
 
+checkoutForm.appendChild(checkoutSaveInfoDiv)
+checkoutSaveInfoDiv.appendChild(checkoutSaveBtn)
+checkoutSaveInfoDiv.appendChild(checkoutSaveBtnLabel)
 
-
-
-
-
-checkoutSwishDiv.appendChild(checkoutSwishNumber);
-checkoutForm.appendChild(checkoutSaveBtn);
-checkoutForm.appendChild(checkoutSaveBtnLabel);
-
-checkoutForm.appendChild(checkoutInputDiscount);
-checkoutForm.appendChild(checkoutInputDiscountBtn);
 
 checkoutVisaDiv.appendChild(checkoutCardName);
 checkoutVisaDiv.appendChild(checkoutCardNumber);
 checkoutVisaDiv.appendChild(checkoutCardExpire);
 checkoutVisaDiv.appendChild(checkoutCardSecurityCode); 
 
+
+
 checkoutForm.appendChild(checkoutSwish);
-checkoutForm.appendChild(checkoutSwishLabel);
 checkoutForm.appendChild(checkoutVisa);
-checkoutForm.appendChild(checkoutVisaLabel);
+checkoutForm.appendChild(checkoutVisaDiv);
 checkoutForm.appendChild(checkoutApple);
-checkoutForm.appendChild(checkoutAppleLabel);
+checkoutFormDiv.appendChild(checkoutVisaDiv);
 
 
-
-
-
-
+// checkoutAllDiv?.appendChild(checkoutButton)
+checkoutContainer?.appendChild(checkoutButton)
 
 
 
@@ -199,31 +227,19 @@ const appleCardDiv = document.querySelector('.checkout__apple-div') as HTMLEleme
 document.addEventListener('DOMContentLoaded', () => {
   visaCard?.addEventListener('click', () => {
     visaCardDiv.className = "checkout__visa-div visible"
-    swishCardDiv.className = "checkout__swish-div invisible"///////Visa Card
+    swishCardDiv.className = "checkout__swish-div invisible"//Visa Card
     appleCardDiv.className = "checkout__apple-div invisible"
-
-    
-   
   });
-
   swishCard?.addEventListener('click', () => {
     visaCardDiv.className = "checkout__visa-div invisible"
-    swishCardDiv.className = "checkout__swish-div visible"///////Swish Card
+    swishCardDiv.className = "checkout__swish-div visible"//Swish Card
     appleCardDiv.className = "checkout__apple-div invisible"
-
-       
   });
-
   appleCard?.addEventListener('click', () => {
     visaCardDiv.className = "checkout__visa-div visible"
-    swishCardDiv.className = "checkout__swish-div invisible"///////Apple Card
-    appleCardDiv.className = "checkout__apple-div invisible"
-
-       
+    swishCardDiv.className = "checkout__swish-div invisible"//Apple Card
+    appleCardDiv.className = "checkout__apple-div invisible"       
   });
-  
-  
-
 });
 
 
