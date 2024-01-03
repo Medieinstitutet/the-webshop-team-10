@@ -1,6 +1,8 @@
 import { cart } from "../main";
-import { Product } from "../models/Product";
-import { CartItem } from "../models/CartItem";
+import { createCartHtml } from "./cartServices";
+// import { Product } from "../models/Product";
+// import { CartItem } from "../models/CartItem";
+// import { addToCart } from "./cartServices";
 
 
 //Hitta och skapa variabler som behövs för att konstruera checkouts
@@ -228,22 +230,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-export const addToCart = (product: Product, quantity: number) => {
-  let alreadyInCart = false;
-  //Kontrollerar om produkt med samma id redan finns i cart. Adderar då ny quantity.
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i].product.id === product.id) {
-      cart[i].quantity += quantity;
-      alreadyInCart = true;
-    }
-  }
+// export const addToCart = (product: Product, quantity: number) => {
+//   let alreadyInCart = false;
+//   //Kontrollerar om produkt med samma id redan finns i cart. Adderar då ny quantity.
+//   for (let i = 0; i < cart.length; i++) {
+//     if (cart[i].product.id === product.id) {
+//       cart[i].quantity += quantity;
+//       alreadyInCart = true;
+//     }
+//   }
 
   
-  //Om produkten inte redan finns i cart lägger den till en helt ny produkt i varukorgen.
-  if (alreadyInCart === false) cart.push(new CartItem(product, quantity));
-  console.log(cart);
-  createCheckoutHtml();
-};
+//   //Om produkten inte redan finns i cart lägger den till en helt ny produkt i varukorgen.
+//   if (alreadyInCart === false) cart.push(new CartItem(product, quantity));
+//   console.log(cart);
+//   createCheckoutHtml();
+// };
 
 
 
@@ -318,6 +320,7 @@ export function createCheckoutHtml() {
       cartItemButtonIncrease.addEventListener("click", () => {
         cart[i].quantity++;
         createCheckoutHtml();
+        createCartHtml();
       });
   
       cartItemButtonDecrease.addEventListener("click", () => {
@@ -327,10 +330,14 @@ export function createCheckoutHtml() {
             cart.splice(i, 1);
           }
           createCheckoutHtml();
+          createCartHtml();
+
         }
         if (cart[i].quantity > 1) {
           cart[i].quantity--;
           createCheckoutHtml();
+          createCartHtml();
+
         }
       });
   
@@ -339,6 +346,8 @@ export function createCheckoutHtml() {
           cart.splice(i, 1);
         }
         createCheckoutHtml();
+        createCartHtml();
+
       });
     }
     //Lägger till totalbeloppet för kassan

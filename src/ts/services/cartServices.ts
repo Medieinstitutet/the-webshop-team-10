@@ -1,6 +1,7 @@
 import { cart } from "../main";
 import { Product } from "../models/Product";
 import { CartItem } from "../models/CartItem";
+import { createCheckoutHtml } from "./checkoutServices";
 
 //Hitta och skapa variabler som behövs för att konstruera cart
 const cartContainer = document.getElementById("cartContainer");
@@ -115,6 +116,7 @@ export function createCartHtml() {
     cartItemButtonIncrease.addEventListener("click", () => {
       cart[i].quantity++;
       createCartHtml();
+      createCheckoutHtml();
     });
 
     cartItemButtonDecrease.addEventListener("click", () => {
@@ -124,10 +126,12 @@ export function createCartHtml() {
           cart.splice(i, 1);
         }
         createCartHtml();
+        createCheckoutHtml();
       }
       if (cart[i].quantity > 1) {
         cart[i].quantity--;
         createCartHtml();
+        createCheckoutHtml();
       }
     });
 
@@ -136,6 +140,7 @@ export function createCartHtml() {
         cart.splice(i, 1);
       }
       createCartHtml();
+      createCheckoutHtml();
     });
   }
   //Lägger till totalbeloppet för kassan
