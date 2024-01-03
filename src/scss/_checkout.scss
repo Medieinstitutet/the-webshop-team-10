@@ -121,3 +121,30 @@ justify-content: space-evenly;
     flex-direction: column;
     gap: v.$margin-m
 }
+
+.checkout__spinner-div {
+position: fixed;
+display: none;
+z-index: 999;
+height: 100%;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.685);
+}
+
+.checkout__spinner-img {
+  position: fixed;
+  display: none;
+  top:-100%; right:-100%; left:-100%; bottom:-100%;
+  margin:auto;
+  // transform: translate(-50%, -50%);
+  z-index: 999;
+  height: 300px;
+  width: 300px;
+  animation: spin 1.3s linear infinite;
+  // transform-origin: center center;
+  
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

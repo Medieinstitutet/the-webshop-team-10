@@ -57,6 +57,10 @@ const checkoutAllDiv = document.createElement("div");
 
 const checkoutSaveInfoDiv = document.createElement("div");
 
+const checkoutSpinnerDiv = document.createElement("div")
+const checkoutSpinnerImg = document.createElement("img")
+
+
 
 
 checkoutHeading.className = "checkout-container__heading";
@@ -142,6 +146,12 @@ checkoutCardExpire.type = "text"
 checkoutCardExpire.placeholder = "MM/YY"
 checkoutCardSecurityCode.type = "number"
 checkoutCardSecurityCode.placeholder = "* * *"
+checkoutSpinnerDiv.className = "checkout__spinner-div"
+document.body?.appendChild(checkoutSpinnerDiv);
+
+checkoutSpinnerImg.className = "checkout__spinner-img"
+checkoutSpinnerImg.src = "/src/img/logo2.png"
+document.body?.appendChild(checkoutSpinnerImg);
 
 
 checkoutContainer?.appendChild(checkoutHeading);
@@ -263,9 +273,18 @@ document.addEventListener('DOMContentLoaded', () => {
 //   createCheckoutHtml();
 // };
 
+//spinner
 
+checkoutButton?.addEventListener("click", async () => {
+  // console.log("hej")
+  checkoutSpinnerDiv.style.display = "block";
+  checkoutSpinnerImg.style.display = "block";
+   await new Promise(resolve => setTimeout(resolve, 2000));
+  checkoutSpinnerDiv.style.display = "none";
+  checkoutSpinnerImg.style.display = "none";
+  window.location.href = "ordercomplete.html"
 
-
+});
 //Fuktion för att skapa html för cart.
 export function createCheckoutHtml() {
   //Tömmer listan
