@@ -1,0 +1,85 @@
+@use "./_variables" as v;
+
+.landing-page {
+  width: 100vw;
+  min-height: calc(100vh - v.$navbar-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: no-repeat center url("src/img/djungle.jpg");
+  background-size: cover;
+
+  &__hero-container {
+    width: clamp(1000px, 90vw, 90vw);
+    background-color: v.$color-white;
+    padding: v.$margin-l;
+    display: flex;
+    gap: v.$margin-l;
+  }
+  &__images {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+    gap: v.$margin-m;
+  }
+  &__logo {
+    aspect-ratio: 470/464;
+    width: 100%;
+  }
+  &__image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    &:nth-last-of-type(2) {
+      border-radius: v.$margin-m;
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: v.$margin-l;
+  }
+  &__heading {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+
+    background: url(src/img/djungle.jpg);
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    overflow-wrap: anywhere;
+  }
+  &__text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  &__link {
+    display: inline-block;
+    width: fit-content;
+    align-self: flex-end;
+
+    padding: v.$margin-m;
+
+    font-family: v.$font-sans;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: v.$font-size-l;
+
+    color: v.$color-secondary;
+    background-color: v.$color-primary;
+    border: 1px solid v.$color-primary;
+
+    &:hover {
+      color: v.$color-primary;
+      background-color: v.$color-secondary;
+    }
+  }
+}

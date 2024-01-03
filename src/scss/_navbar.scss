@@ -43,7 +43,9 @@
     }
   }
   &__logo-image {
-    display: flex;
+    height: 100%;
+    padding: v.$margin-s 0;
+    margin-left: v.$margin-m;
   }
   &__logo-name {
     display: none;
