@@ -95,10 +95,26 @@
   }
 }
 
-.checkout__visa-div {
+.checkout__visa-div,.invisible{
   display: none;
 }
 
-.checkout__swish-div{
+.checkout__visa-div,.visible{
+  display: block;
+}
+
+.checkout__swish-div,.invisible{
   display: none;
+}
+
+.checkout__swish-div,.visible{
+  display: block;
+}
+
+.checkout__apple-div,.invisible{
+  display: none;
+}
+
+.checkout__apple-div,.visible{
+  display: block;
 }

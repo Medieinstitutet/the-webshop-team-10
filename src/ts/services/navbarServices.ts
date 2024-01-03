@@ -10,7 +10,7 @@ navbar.className = "navbar";
 // Skapar logo bilden
 const navbarLogoImage = document.createElement("img");
 navbarLogoImage.className = "navbar__logo-image";
-navbarLogoImage.src = "#";
+navbarLogoImage.src = ".././src/img/logo2.png";
 navbarLogoImage.alt = "Logo";
 
 // Skapar länk till logans namn (hemsidans namn)
