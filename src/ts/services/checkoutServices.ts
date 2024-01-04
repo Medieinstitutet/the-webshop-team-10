@@ -1,13 +1,10 @@
+// Importera cart-objektet och funktionen createCartHtml från cartServices.
 import { cart } from "../main";
 import { createCartHtml } from "./cartServices";
-// import { Product } from "../models/Product";
-// import { CartItem } from "../models/CartItem";
-// import { addToCart } from "./cartServices";
-
 
 //Hitta och skapa variabler som behövs för att konstruera checkouts
 const checkoutContainer = document.getElementById("checkoutContainer");
-
+//Kassasida
 const checkoutHeading = document.createElement("h3");
 const checkoutEmpty = document.createElement("span");
 const checkoutUl = document.createElement("ul");
@@ -23,8 +20,7 @@ const checkoutInputCountry = document.createElement("input")
 const checkoutInputAdress = document.createElement("input")
 const checkoutInputCity = document.createElement("input")
 const checkoutInputZip = document.createElement("input")
-
-
+//sparaupgifter
 const checkoutSaveBtn = document.createElement("input")
 const checkoutSaveBtnLabel = document.createElement("label")
 const checkoutInputDiscount = document.createElement("input")
@@ -54,15 +50,20 @@ const checkoutDiv = document.createElement("div");
 const checkoutCartDiv = document.createElement("div");
 //Skapar grupp förcheckout alla dela
 const checkoutAllDiv = document.createElement("div");
-
 const checkoutSaveInfoDiv = document.createElement("div");
-
+//spinner
 const checkoutSpinnerDiv = document.createElement("div")
 const checkoutSpinnerImg = document.createElement("img")
 
+const visaCard = document.querySelector('.checkout-button__visa') as HTMLElement;
+const swishCard = document.querySelector('.checkout-button__swish') as HTMLElement;
+const appleCard = document.querySelector('.checkout-button__apple') as HTMLElement;
 
+const visaCardDiv = document.querySelector('.checkout__visa-div') as HTMLElement;
+const swishCardDiv = document.querySelector('.checkout__swish-div') as HTMLElement;
+const appleCardDiv = document.querySelector('.checkout__apple-div') as HTMLElement;
 
-
+// Tilldela klasser och innehåll till olika HTML-element.
 checkoutHeading.className = "checkout-container__heading";
 checkoutHeading.innerHTML = "Utcheckning";
 checkoutEmpty.className = "checkout-contianer__empty";
@@ -105,8 +106,7 @@ checkoutCardExpire.className = "checkout__card-expire";
 checkoutCardSecurityCode.className = "checkout__card-security-code";
 checkoutAllDiv.className = "checkout__all-div";
 
-
-
+//Skapar placeholder och tilldelar vilken typ det har
 checkoutInputFname.type = "text"
 checkoutInputFname.placeholder = "Förnamn"
 checkoutInputLname.type = "text"
@@ -147,36 +147,27 @@ checkoutCardExpire.placeholder = "MM/YY"
 checkoutCardSecurityCode.type = "number"
 checkoutCardSecurityCode.placeholder = "* * *"
 checkoutSpinnerDiv.className = "checkout__spinner-div"
-document.body?.appendChild(checkoutSpinnerDiv);
-
 checkoutSpinnerImg.className = "checkout__spinner-img"
 checkoutSpinnerImg.src = "/src/img/logo2.png"
-document.body?.appendChild(checkoutSpinnerImg);
-
-
-checkoutContainer?.appendChild(checkoutHeading);
 checkoutDiv.className = "checkout__div";
 checkoutCartDiv.className = "checkout__cart-div";
+
+//Placerar ut allt på rätt ställe 
+checkoutContainer?.appendChild(checkoutHeading);
 
 checkoutContainer?.appendChild(checkoutDiv);
 checkoutContainer?.appendChild(checkoutCartDiv);
 
 checkoutCartDiv?.appendChild(checkoutUl)
-
 checkoutCartDiv.appendChild(checkoutInputDiscount);
 checkoutCartDiv.appendChild(checkoutInputDiscountBtn);
 checkoutCartDiv?.appendChild(checkoutTotalPrice)
 
-
 checkoutContainer?.appendChild(checkoutEmpty);
 checkoutContainer?.appendChild(checkoutAllDiv);
-// checkoutContainer?.appendChild(checkoutUl);
-// checkoutContainer?.appendChild(checkoutTotalPrice);
+
 checkoutContainer?.appendChild(checkoutFormDiv);
 checkoutContainer?.appendChild(checkoutVisaDiv);
-// checkoutContainer?.appendChild(checkoutSwishDiv);
-// checkoutContainer?.appendChild(checkoutButton);
-
 
 checkoutFormDiv?.appendChild(checkoutInfoSpan)
 
@@ -185,11 +176,10 @@ checkoutAllDiv.appendChild(checkoutCartDiv);
 
 checkoutFormDiv.appendChild(checkoutForm);
 
-
-
 checkoutFormDiv.appendChild(checkoutSwishDiv)
 checkoutSwishDiv.appendChild(checkoutSwishNumber);
 
+//input uppgifter
 checkoutForm.appendChild(checkoutInputFname);
 checkoutForm.appendChild(checkoutInputLname);
 checkoutForm.appendChild(checkoutInputEmail);
@@ -199,41 +189,28 @@ checkoutForm.appendChild(checkoutInputAdress);
 checkoutForm.appendChild(checkoutInputCity);
 checkoutForm.appendChild(checkoutInputZip);
 
-// checkoutForm.appendChild(checkoutSaveBtn);
-// checkoutForm.appendChild(checkoutSaveBtnLabel);
-
 checkoutForm.appendChild(checkoutSaveInfoDiv)
 checkoutSaveInfoDiv.appendChild(checkoutSaveBtn)
 checkoutSaveInfoDiv.appendChild(checkoutSaveBtnLabel)
 
-
+//card och swish input
 checkoutVisaDiv.appendChild(checkoutCardName);
 checkoutVisaDiv.appendChild(checkoutCardNumber);
 checkoutVisaDiv.appendChild(checkoutCardExpire);
 checkoutVisaDiv.appendChild(checkoutCardSecurityCode); 
-
-
-
 checkoutForm.appendChild(checkoutSwish);
 checkoutForm.appendChild(checkoutVisa);
 checkoutForm.appendChild(checkoutVisaDiv);
 checkoutForm.appendChild(checkoutApple);
 checkoutFormDiv.appendChild(checkoutVisaDiv);
 
-
-// checkoutAllDiv?.appendChild(checkoutButton)
+//bekräfta order knapp
 checkoutFormDiv?.appendChild(checkoutButton)
+//spinner
+document.body?.appendChild(checkoutSpinnerImg);
+document.body?.appendChild(checkoutSpinnerDiv);
 
-
-
-const visaCard = document.querySelector('.checkout-button__visa') as HTMLElement;
-const swishCard = document.querySelector('.checkout-button__swish') as HTMLElement;
-const appleCard = document.querySelector('.checkout-button__apple') as HTMLElement;
-
-const visaCardDiv = document.querySelector('.checkout__visa-div') as HTMLElement;
-const swishCardDiv = document.querySelector('.checkout__swish-div') as HTMLElement;
-const appleCardDiv = document.querySelector('.checkout__apple-div') as HTMLElement;
-
+//Byta classnamn på betalsätten så att dom syns
 document.addEventListener('DOMContentLoaded', () => {
   visaCard?.addEventListener('click', () => {
     visaCardDiv.className = "checkout__visa-div visible"
@@ -252,31 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
-
-
-// export const addToCart = (product: Product, quantity: number) => {
-//   let alreadyInCart = false;
-//   //Kontrollerar om produkt med samma id redan finns i cart. Adderar då ny quantity.
-//   for (let i = 0; i < cart.length; i++) {
-//     if (cart[i].product.id === product.id) {
-//       cart[i].quantity += quantity;
-//       alreadyInCart = true;
-//     }
-//   }
-
-  
-//   //Om produkten inte redan finns i cart lägger den till en helt ny produkt i varukorgen.
-//   if (alreadyInCart === false) cart.push(new CartItem(product, quantity));
-//   console.log(cart);
-//   createCheckoutHtml();
-// };
-
-//spinner
-
+//spinner timout och till ordercomplete.html
 checkoutButton?.addEventListener("click", async () => {
-  // console.log("hej")
   checkoutSpinnerDiv.style.display = "block";
   checkoutSpinnerImg.style.display = "block";
   await new Promise(resolve => setTimeout(resolve, 2500));
@@ -349,15 +303,12 @@ export function createCheckoutHtml() {
     cartItemBottomDiv.appendChild(cartItemPriceTotal);
     cartItemBottomDiv.appendChild(cartItemButtonDelete);
 
-
-    
       //Funktionalitet för knappar
       cartItemButtonIncrease.addEventListener("click", () => {
         cart[i].quantity++;
         createCheckoutHtml();
         createCartHtml();
       });
-  
       cartItemButtonDecrease.addEventListener("click", () => {
         //Om det bara finns en av produkten fråga om man vill ta bort
         if (cart[i].quantity === 1) {
@@ -366,13 +317,11 @@ export function createCheckoutHtml() {
           }
           createCheckoutHtml();
           createCartHtml();
-
         }
         if (cart[i].quantity > 1) {
           cart[i].quantity--;
           createCheckoutHtml();
           createCartHtml();
-
         }
       });
   
@@ -382,7 +331,6 @@ export function createCheckoutHtml() {
         }
         createCheckoutHtml();
         createCartHtml();
-
       });
     }
     //Lägger till totalbeloppet för kassan
@@ -397,14 +345,3 @@ export function createCheckoutHtml() {
     //Sparar till LS
     localStorage.setItem("Group10Cart", JSON.stringify(cart));
   }
-  
-
-  
-
-
-  
-  
-  
-
-
-  
