@@ -1,7 +1,5 @@
 @use "./_variables" as v;
 
-
-
 .invisible {
     display: none;
     align-items: center;
@@ -14,27 +12,20 @@
     align-items: center;
 }
 
-
-
   #checkoutContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
-    
 }
 
 .checkout {
-    
     &__all-div{
 display: flex;
 justify-content: space-evenly;
 gap: v.$margin-m;
-
-    }
-
+  }
 }
-
 
 .checkout__cart-div {
   background-color: white;
@@ -43,44 +34,35 @@ gap: v.$margin-m;
 }
 .checkout-input__form-div {
     gap: v.$margin-m;
-  padding: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     max-width: 40%;
     width: 500px;
     background-color: white;
-    
+  
     input {
       padding: 10px;
     }
-
 }
 
-
-
-.checkout-contianer__checkout-form {
+.checkout-container__checkout-form {
   gap: v.$margin-s;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    
 }
 
 .checkout-container__heading{
     margin-bottom: 30px;    
 }
 
-
-
-.checkout-contianer__checkout-button {
+.checkout-container__checkout-button {
     padding: 20px;
     margin-top: 30px;
     display: flex;
     align-self: end;
-
-
   }
-
 
 .checkout__card-name,
 .checkout__card-number,
@@ -105,10 +87,7 @@ gap: v.$margin-m;
     margin-right: 10px;
 }
 
-
-
 .checkout-input__input-discount-btn {
-
  margin: 10px
 }
 

@@ -66,15 +66,15 @@ const appleCardDiv = document.querySelector('.checkout__apple-div') as HTMLEleme
 // Tilldela klasser och innehåll till olika HTML-element.
 checkoutHeading.className = "checkout-container__heading";
 checkoutHeading.innerHTML = "Utcheckning";
-checkoutEmpty.className = "checkout-contianer__empty";
+checkoutEmpty.className = "checkout-container__empty";
 checkoutUl.className = "checkout-items";
 checkoutInfoSpan.className = "checkout-info__span";
 checkoutInfoSpan.innerHTML = "Fyll i dina uppgifter:"
-checkoutTotalPrice.className = "checkout-contianer__total-price";
-checkoutButton.className = "checkout-contianer__checkout-button";
+checkoutTotalPrice.className = "checkout-container__total-price";
+checkoutButton.className = "checkout-container__checkout-button";
 checkoutButton.innerHTML = "Bekräfta köp";
 
-checkoutForm.className = "checkout-contianer__checkout-form";
+checkoutForm.className = "checkout-container__checkout-form";
 checkoutInputFname.className = "checkout-input__first-name";
 checkoutInputLname.className = "checkout-input__last-name";
 checkoutInputEmail.className = "checkout-input__email";

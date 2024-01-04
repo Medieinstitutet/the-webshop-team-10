@@ -201,6 +201,57 @@ export const p20: Product = new Product(
   "/src/img/flamingo.jpg",
   "Sydamerika"
 );
+export const p21: Product = new Product(
+  21,
+  "Ewok",
+  16,
+  66,
+  "Ewoks är en påhittad art i Star Wars-universumet och dyker upp i Return of the Jedi Dessa små, lurviga varelser bor på skogsmånen Endor och lever i primitiva byar i trädtopparna. Kända för sin primitiva teknologi och stamsamhälle är Ewoks skickliga inom guerrilla warfare. Trots deras gulliga utseende spelar de en avgörande roll i rebellalliansens seger mot det galaktiska imperiet. Ewoks har blivit ikoniska i populärkulturen för sin unika design och minnesvärda bidrag till Star Wars-sagan.",
+  0,
+  "/src/img/ewok.jpg",
+  "Endor"
+);
+export const p22: Product = new Product(
+  22,
+  "Megalodon",
+  3000000,
+  99,
+  "En levande megalodon, den förhistoriska jättehajen, är nu till salu och väcker stor uppmärksamhet bland modiga entusiaster och skapar frågor om gränserna för vetenskap och handel.",
+  0,
+  "/src/img/megalodon.jpg",
+  "Secret"
+);
+export const p23: Product = new Product(
+  23,
+  "Elefant",
+  4.20,
+  40,
+  "Elefanten, med sina imponerande betar och känsliga snabel, är en majestätisk varelse från djurriket. Nu kan den bli din!",
+  0,
+  "/src/img/elephant.png",
+  "Sydafrika"
+);
+export const p24: Product = new Product(
+  24,
+  "Elsa",
+  5,
+  10000000,
+  "Elsa, min fem år gamla Golden Doodle, är den perfekta fyrbenta följeslagaren. Hennes gyllene päls och lekfulla personlighet sprider glädje och värme i vårt hem varje dag. Elsa älskar att busa i trädgården och leka med sina leksaker, alltid redo för en kelstund närhelst det behövs. Hennes intelligens och lydnad gör henne till en underbar kamrat, och hennes mjuka päls är omtyckt av alla som möter henne.",
+  0,
+  "/src/img/elsa1.png",
+  "Hemma"
+);
+export const p25: Product = new Product(
+  25,
+  "Fluffy",
+  8,
+  6.9,
+  "Fluffy, en kolossal trehövdad hund, utstrålar närvaro med sitt imponerande men samtidigt fascinerande yttre med sina massiva proportioner och flera huvuden, kontrasterande dess skrämmande utseende med stunder av överraskande ömhet.",
+  0,
+  "/src/img/fluffy.png",
+  "Sydafrika"
+);
+
 
 export const products: Product[] = [
   p1,
@@ -223,6 +274,11 @@ export const products: Product[] = [
   p18,
   p19,
   p20,
+  p21,
+  p22,
+  p23,
+  p24,
+  p25
 ];
 
 //Fuktion för att skapa html för produkter.
