@@ -344,8 +344,8 @@ export const createProductHtml = () => {
         productContainer?.appendChild(productContainerImage);
         productContainer?.appendChild(productContainerInfo);
         productContainerInfo?.appendChild(productContainerHeading);
-        productContainerInfo?.appendChild(productContainerDescription);
         productContainerInfo?.appendChild(productContainerCountry);
+        productContainerInfo?.appendChild(productContainerDescription);
         productContainerInfo?.appendChild(productContainerPrice);
         productContainerInfo?.appendChild(productContainerForm);
         productContainerForm?.appendChild(productContainerFormInput);

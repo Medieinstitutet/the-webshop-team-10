@@ -9,6 +9,9 @@
     aspect-ratio: 1/1;
     object-fit: cover;
   }
+  &__country {
+    margin-top: calc(v.$margin-l / -2);
+  }
   &__info {
     background-color: v.$color-white;
     padding: v.$margin-m;

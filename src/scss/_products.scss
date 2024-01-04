@@ -24,13 +24,14 @@
     aspect-ratio: 1/1;
     object-fit: cover;
   }
-
-  &__price {
+  &__country {
+    margin-top: -(v.$margin-xs);
   }
-
+  &__price {
+    align-self: flex-end;
+  }
   &__button {
     border: 0;
     font-size: v.$font-size-s;
   }
 }
-

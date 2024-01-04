@@ -58,6 +58,7 @@ export function createCartHtml() {
   for (let i = 0; i < cart.length; i++) {
     //Skapar element
     const cartItemLi = document.createElement("li");
+    const cartItemImgLink = document.createElement("a");
     const cartItemImg = document.createElement("img");
     const cartItemLink = document.createElement("a");
     const cartItemTitle = document.createElement("span");
@@ -72,6 +73,7 @@ export function createCartHtml() {
 
     //Tilldelar klasser
     cartItemLi.className = "cart-item";
+    cartItemImgLink.className = "cart-item__image-link";
     cartItemImg.className = "cart-item__image";
     cartItemLink.className = "cart-item__link";
     cartItemTitle.className = "cart-item__title";
@@ -85,6 +87,7 @@ export function createCartHtml() {
     cartItemButtonDelete.className = "cart-item__remove";
 
     //Lägger till produktinformation
+    cartItemImgLink.href = "product.html?id=" + cart[i].product.id;
     cartItemImg.src = cart[i].product.image;
     cartItemImg.alt = cart[i].product.name;
     cartItemLink.href = "product.html?id=" + cart[i].product.id;
@@ -104,7 +107,8 @@ export function createCartHtml() {
 
     //Placerar elementen
     cartUl.appendChild(cartItemLi);
-    cartItemLi.appendChild(cartItemImg);
+    cartItemLi.appendChild(cartItemImgLink);
+    cartItemImgLink.appendChild(cartItemImg);
     cartItemLi.appendChild(cartItemLink);
     cartItemLink.appendChild(cartItemTitle);
     cartItemLi.appendChild(cartItemBottomDiv);

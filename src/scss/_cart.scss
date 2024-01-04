@@ -19,7 +19,6 @@
   &__visible {
     display: flex;
   }
-
   &__checkout-link {
     align-self: flex-end;
     width: fit-content;
@@ -34,7 +33,6 @@
     color: v.$color-secondary;
     background-color: v.$color-primary;
     border: 1px solid v.$color-primary;
-
     &:hover {
       color: v.$color-primary;
       background-color: v.$color-secondary;
@@ -50,7 +48,6 @@
   max-height: 50vh;
   background-color: v.$color-white;
   padding: v.$font-size-m;
-  
 }
 
 .cart-item {
@@ -61,13 +58,14 @@
   padding-bottom: v.$margin-m;
   border-bottom: 1px solid v.$color-black;
 
+  &__image-link {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
   &__image {
     height: 95px;
     width: 75px;
     object-fit: cover;
-
-    grid-column: 1;
-    grid-row: 1 / 3;
   }
   &__link {
     grid-column: 2;
