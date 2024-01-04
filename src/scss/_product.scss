@@ -1,0 +1,42 @@
+@use "./variables" as v;
+
+.product-container {
+  display: flex;
+  width: 100%;
+  gap: v.$margin-m;
+  &__image {
+    width: 45%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+  &__country {
+    margin-top: calc(v.$margin-l / -2);
+  }
+  &__info {
+    background-color: v.$color-white;
+    padding: v.$margin-m;
+    display: flex;
+    flex-direction: column;
+    gap: v.$margin-m;
+  }
+  &__description {
+    line-height: 1.4;
+  }
+  &__price {
+    font-weight: 500;
+    font-size: v.$font-size-l;
+  }
+  &__form {
+    display: flex;
+    gap: v.$margin-m;
+    margin-top: v.$margin-m;
+    &-input {
+      border: 1px solid v.$color-primary;
+      padding-left: v.$margin-s;
+      flex-grow: 1;
+    }
+    &-button {
+      flex-grow: 2;
+    }
+  }
+}

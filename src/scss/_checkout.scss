@@ -1,0 +1,136 @@
+@use "./_variables" as v;
+
+.invisible {
+    display: none;
+    align-items: center;
+  }
+  
+  .visible {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  #checkoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.checkout {
+    &__all-div{
+display: flex;
+justify-content: space-evenly;
+gap: v.$margin-m;
+  }
+}
+
+.checkout__cart-div {
+  background-color: white;
+  padding: v.$margin-m;
+  height: fit-content;
+}
+.checkout-input__form-div {
+    gap: v.$margin-m;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    width: 500px;
+    background-color: white;
+  
+    input {
+      padding: 10px;
+    }
+}
+
+.checkout-container__checkout-form {
+  gap: v.$margin-s;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.checkout-container__heading{
+    margin-bottom: 30px;    
+}
+
+.checkout-container__checkout-button {
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    align-self: end;
+  }
+
+.checkout__card-name,
+.checkout__card-number,
+.checkout__card-expire,
+.checkout__card-security-code {
+    margin-bottom: 10px;
+}
+
+.checkout-button {
+  &__swish {
+    margin-bottom: 10px;
+  }  
+  &__visa {
+    margin-bottom: 10px;
+  }  
+  &__apple {
+    margin-bottom: 10px;
+  }  
+}
+
+.checkout-input__save-btn {
+    margin-right: 10px;
+}
+
+.checkout-input__input-discount-btn {
+ margin: 10px
+}
+
+.checkout-input__input-discount {
+  padding: 10px;
+}
+
+.checkout-info__span {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+.checkout-items {
+    max-height: 600px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: v.$margin-m
+}
+
+.checkout__spinner-div {
+position: fixed;
+display: none;
+z-index: 999;
+height: 100%;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.685);
+}
+
+.checkout__spinner-img {
+  position: fixed;
+  display: none;
+  top:-100%; right:-100%; left:-100%; bottom:-100%;
+  margin:auto;
+  // transform: translate(-50%, -50%);
+  z-index: 999;
+  height: 300px;
+  width: 300px;
+  animation: spin 1.3s linear infinite;
+  // transform-origin: center center;
+  
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

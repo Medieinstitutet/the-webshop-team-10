@@ -1,0 +1,76 @@
+@use "./_variables" as v;
+
+.navbar {
+  height: v.$navbar-height;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: v.$color-primary;
+  border-bottom: 1px solid v.$color-primary;
+
+  &__ul {
+    height: 100%;
+    width: 600px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+  }
+  &__li {
+    height: 100%;
+    flex-grow: 1;
+
+    a {
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: v.$font-navbar-size;
+      color: v.$color-secondary;
+    }
+    a:hover {
+      background-color: v.$color-secondary;
+      color: v.$color-primary;
+    }
+  }
+  &__logo-link {
+    padding: v.$margin-s v.$margin-m;
+    height: 100%;
+  }
+  &__logo-image {
+    height: 100%;
+  }
+  &__logo-name {
+    display: none;
+  }
+}
+.hamburger-menu {
+  display: none;
+}
+
+#cartButton {
+  height: 100%;
+  padding: 0 v.$margin-m;
+  font-family: v.$font-sans;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: v.$font-navbar-size;
+  cursor: pointer;
+  color: v.$color-primary;
+  background-color: v.$color-secondary;
+
+  border: 0;
+  &:hover {
+    color: v.$color-secondary;
+    background-color: v.$color-primary;
+  }
+}

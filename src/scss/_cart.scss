@@ -1,0 +1,114 @@
+@use "./_variables" as v;
+
+.cart-container {
+  position: fixed;
+  right: 0;
+  top: v.$navbar-height;
+  min-width: 50vw;
+
+  padding: v.$margin-m;
+  background-color: v.$color-white;
+
+  display: none;
+
+  flex-direction: column;
+  gap: v.$margin-s;
+  border-bottom: 1px solid v.$color-primary;
+  border-left: 1px solid v.$color-primary;
+
+  &__visible {
+    display: flex;
+  }
+  &__checkout-link {
+    align-self: flex-end;
+    width: fit-content;
+
+    padding: v.$margin-s;
+
+    font-family: v.$font-sans;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: v.$font-navbar-size;
+
+    color: v.$color-secondary;
+    background-color: v.$color-primary;
+    border: 1px solid v.$color-primary;
+    &:hover {
+      color: v.$color-primary;
+      background-color: v.$color-secondary;
+    }
+  }
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: v.$margin-m;
+  overflow-y: scroll;
+  max-height: 50vh;
+  background-color: v.$color-white;
+  padding: v.$font-size-m;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  grid-template-rows: 1fr auto;
+  gap: v.$margin-m;
+  padding-bottom: v.$margin-m;
+  border-bottom: 1px solid v.$color-black;
+
+  &__image-link {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  &__image {
+    height: 95px;
+    width: 75px;
+    object-fit: cover;
+  }
+  &__link {
+    grid-column: 2;
+    grid-row: 1;
+
+    color: v.$color-black;
+  }
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+  &__bottom {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: v.$margin-m;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: v.$margin-m;
+  }
+  &__button {
+    height: 41px;
+    width: 41px;
+    padding: v.$margin-s;
+    font-family: v.$font-sans;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: v.$font-navbar-size;
+    color: v.$color-secondary;
+    background-color: v.$color-primary;
+    &:hover {
+      color: v.$color-primary;
+      background-color: v.$color-secondary;
+    }
+  }
+  &__remove {
+    @extend .cart-item__button;
+    width: unset;
+  }
+}

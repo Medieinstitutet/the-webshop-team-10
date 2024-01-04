@@ -1,97 +1,62 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@use "./_variables" as v;
+@use "./_cart";
+@use "./_landingpage";
+@use "./_navbar";
+@use "./_product";
+@use "./_products";
+@use "./_typography";
+@use "./checkout";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap");
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: v.$font-sans;
+  font-size: 1rem;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-family: v.$font-sans;
+  padding: v.$margin-s;
+  font-family: v.$font-sans;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: v.$color-secondary;
+  background-color: v.$color-primary;
+  border: 1px solid v.$color-primary;
+  &:hover {
+    color: v.$color-primary;
+    background-color: v.$color-secondary;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: v.$color-secondary;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.main-container {
+  width: clamp(1000px, 85vw, 85vw);
+  min-height: 100vh;
+  margin-bottom: v.$margin-l;
+}
+
+.ordercomplete {
+  position: fixed;
+  top: 50%;
+  
 }
