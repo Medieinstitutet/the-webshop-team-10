@@ -222,7 +222,7 @@ checkoutFormDiv.appendChild(checkoutVisaDiv);
 
 
 // checkoutAllDiv?.appendChild(checkoutButton)
-checkoutContainer?.appendChild(checkoutButton)
+checkoutFormDiv?.appendChild(checkoutButton)
 
 
 
@@ -279,10 +279,10 @@ checkoutButton?.addEventListener("click", async () => {
   // console.log("hej")
   checkoutSpinnerDiv.style.display = "block";
   checkoutSpinnerImg.style.display = "block";
-   await new Promise(resolve => setTimeout(resolve, 2000));
+  await new Promise(resolve => setTimeout(resolve, 2500));
   checkoutSpinnerDiv.style.display = "none";
   checkoutSpinnerImg.style.display = "none";
-  window.location.href = "ordercomplete.html"
+  window.location.href = "ordercomplete.html" 
 
 });
 //Fuktion för att skapa html för cart.
