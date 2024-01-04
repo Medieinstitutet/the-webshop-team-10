@@ -148,7 +148,7 @@ checkoutCardSecurityCode.type = "number"
 checkoutCardSecurityCode.placeholder = "* * *"
 checkoutSpinnerDiv.className = "checkout__spinner-div"
 checkoutSpinnerImg.className = "checkout__spinner-img"
-checkoutSpinnerImg.src = "/src/img/logo2.png"
+checkoutSpinnerImg.src = "/src/img/logo9.png"
 checkoutDiv.className = "checkout__div";
 checkoutCartDiv.className = "checkout__cart-div";
 
@@ -249,7 +249,9 @@ export function createCheckoutHtml() {
   for (let i = 0; i < cart.length; i++) {
     //Skapar element
     const cartItemLi = document.createElement("li");
+    const cartItemImgLink = document.createElement("a");
     const cartItemImg = document.createElement("img");
+    const cartItemTitleLink = document.createElement("a");
     const cartItemTitle = document.createElement("span");
     const cartItemBottomDiv = document.createElement("div");
     const cartItemPriceEach = document.createElement("span");
@@ -262,7 +264,9 @@ export function createCheckoutHtml() {
 
     //Tilldelar klasser
     cartItemLi.className = "cart-item";
+    cartItemImgLink.className = "cart-item__image-link";
     cartItemImg.className = "cart-item__image";
+    cartItemTitleLink.className = "cart-item__link";
     cartItemTitle.className = "cart-item__title";
     cartItemBottomDiv.className = "cart-item__bottom";
     cartItemPriceEach.className = "cart-item__price";
@@ -274,8 +278,10 @@ export function createCheckoutHtml() {
     cartItemButtonDelete.className = "cart-item__remove";
 
     //Lägger till produktinformation
+    cartItemImgLink.href = "product.html?id=" + cart[i].product.id;
     cartItemImg.src = cart[i].product.image;
     cartItemImg.alt = cart[i].product.name;
+    cartItemTitleLink.href = "product.html?id=" + cart[i].product.id;
     cartItemTitle.innerHTML = cart[i].product.name;
     cartItemPriceEach.innerHTML =
       "Styckpris: " + cart[i].product.price.toFixed(3) + "&#x20bf;";
@@ -292,8 +298,10 @@ export function createCheckoutHtml() {
 
     //Placerar elementen
     checkoutUl.appendChild(cartItemLi);
-    cartItemLi.appendChild(cartItemImg);
-    cartItemLi.appendChild(cartItemTitle);
+    cartItemLi.appendChild(cartItemImgLink);
+    cartItemImgLink.appendChild(cartItemImg);
+    cartItemLi.appendChild(cartItemTitleLink);
+    cartItemTitleLink.appendChild(cartItemTitle);
     cartItemLi.appendChild(cartItemBottomDiv);
     cartItemBottomDiv.appendChild(cartItemPriceEach);
     cartItemBottomDiv.appendChild(cartItemButtonsDiv);

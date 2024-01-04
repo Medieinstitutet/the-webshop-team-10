@@ -52,7 +52,7 @@ body {
 .main-container {
   width: clamp(1000px, 85vw, 85vw);
   min-height: 100vh;
-  border-bottom: 1px dotted black;
+  margin-bottom: v.$margin-l;
 }
 
 .ordercomplete {

@@ -43,12 +43,11 @@
     }
   }
   &__logo-link {
-    margin-left: v.$margin-m;
+    padding: v.$margin-s v.$margin-m;
     height: 100%;
   }
   &__logo-image {
     height: 100%;
-    padding: v.$margin-s 0;
   }
   &__logo-name {
     display: none;
