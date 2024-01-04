@@ -249,7 +249,7 @@ export const p25: Product = new Product(
   "Fluffy, en kolossal trehövdad hund, utstrålar närvaro med sitt imponerande men samtidigt fascinerande yttre med sina massiva proportioner och flera huvuden, kontrasterande dess skrämmande utseende med stunder av överraskande ömhet.",
   0,
   "/src/img/fluffy.png",
-  "Sydafrika"
+  "Hogwarts"
 );
 
 
