@@ -55,13 +55,7 @@ const checkoutSaveInfoDiv = document.createElement("div");
 const checkoutSpinnerDiv = document.createElement("div")
 const checkoutSpinnerImg = document.createElement("img")
 
-const visaCard = document.querySelector('.checkout-button__visa') as HTMLElement;
-const swishCard = document.querySelector('.checkout-button__swish') as HTMLElement;
-const appleCard = document.querySelector('.checkout-button__apple') as HTMLElement;
 
-const visaCardDiv = document.querySelector('.checkout__visa-div') as HTMLElement;
-const swishCardDiv = document.querySelector('.checkout__swish-div') as HTMLElement;
-const appleCardDiv = document.querySelector('.checkout__apple-div') as HTMLElement;
 
 // Tilldela klasser och innehåll till olika HTML-element.
 checkoutHeading.className = "checkout-container__heading";
@@ -211,23 +205,22 @@ document.body?.appendChild(checkoutSpinnerImg);
 document.body?.appendChild(checkoutSpinnerDiv);
 
 //Byta classnamn på betalsätten så att dom syns
-document.addEventListener('DOMContentLoaded', () => {
-  visaCard?.addEventListener('click', () => {
-    visaCardDiv.className = "checkout__visa-div visible"
-    swishCardDiv.className = "checkout__swish-div invisible"//Visa Card
-    appleCardDiv.className = "checkout__apple-div invisible"
+  checkoutVisa.addEventListener('click', () => {
+    console.log("test")
+    checkoutVisaDiv.className = "checkout__visa-div visible"
+    checkoutSwishDiv.className = "checkout__swish-div invisible"//Visa Card
+    // appleCardDiv.className = "checkout__apple-div invisible"
   });
-  swishCard?.addEventListener('click', () => {
-    visaCardDiv.className = "checkout__visa-div invisible"
-    swishCardDiv.className = "checkout__swish-div visible"//Swish Card
-    appleCardDiv.className = "checkout__apple-div invisible"
+  checkoutSwish.addEventListener('click', () => {
+    checkoutVisaDiv.className = "checkout__visa-div invisible"
+    checkoutSwishDiv.className = "checkout__swish-div visible"//Swish Card
+    // appleCardDiv.className = "checkout__apple-div invisible"
   });
-  appleCard?.addEventListener('click', () => {
-    visaCardDiv.className = "checkout__visa-div visible"
-    swishCardDiv.className = "checkout__swish-div invisible"//Apple Card
-    appleCardDiv.className = "checkout__apple-div invisible"       
+  checkoutApple.addEventListener('click', () => {
+    checkoutVisaDiv.className = "checkout__visa-div visible"
+    checkoutSwishDiv.className = "checkout__swish-div invisible"//Apple Card
+    // appleCardDiv.className = "checkout__apple-div invisible"       
   });
-});
 
 //spinner timout och till ordercomplete.html
 checkoutButton?.addEventListener("click", async () => {
